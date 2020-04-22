@@ -9,7 +9,7 @@
 
 .menu-wrap .menu-toggler {
   position: absolute;
-  top: 5%;
+  top: 50px;
   right: 5%;
   z-index: 2;
   cursor: pointer;
@@ -21,13 +21,12 @@
 
 .menu-wrap .hamburger {
   position: absolute;
-  top: 5%;
+  top: 50px;
   right: 5%;
   z-index: 1;
   width: 60px;
   height: 60px;
   padding: 1rem;
-  /* background: #e5e5e5; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,25 +88,20 @@
   border-top-left-radius: 15px 2px;
 }
 
-/* Rotate on hover when checked
-.menu-wrap .menu-toggler:checked:hover + .hamburger > div {
-  transform: rotate(225deg);
-} */
-
 /* Show menu */
 .menu-wrap .menu-toggler:checked ~ .ham-menu {
-  visibility: visible;
+  display: block;
 }
 
-.menu-wrap .menu-toggler:checked ~ .header-container {
+/* .menu-wrap .menu-toggler:checked ~ .header-container {
   visibility: hidden;
-}
-
+} */
+/* 
 .menu-wrap .menu-toggler:checked ~ .ham-menu > div > ul,
 .menu-wrap .menu-toggler:checked ~ .ham-menu > div > section {
   opacity: 1;
-  transition: opacity 0.4s ease;
-}
+  transition: opacity 0.5s ease;
+} */
 
 /* Menu items */
 .menu-wrap .ham-menu {
@@ -117,7 +111,17 @@
   width: 100%;
   height: 100vh;
   background: #e5e5e5;
-  visibility: hidden;
+  display: none;
+  animation: appear 0.5s;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .menu-wrap .ham-menu .ham-menu-wrapper {
@@ -161,7 +165,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.4s ease;
   pointer-events: auto;
 }
@@ -184,11 +188,11 @@
   color: #000;
 }
 
-.menu-wrap .ham-menu .ham-footer {
+/* .menu-wrap .ham-menu .ham-footer {
   opacity: 0;
   transition: opacity 0.4s ease;
   pointer-events: auto;
-}
+} */
 
 .menu-wrap .ham-menu .ham-footer .footer-container {
   width: 100%;

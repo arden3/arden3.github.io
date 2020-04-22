@@ -121,10 +121,23 @@ p {
 
 /* HEADER STYLES */
 .hero-image {
+  position: relative;
   height: 100vh;
   width: 100%;
   margin-top: 0;
   background: no-repeat center center/cover url("/img/hero.jpg");
+}
+
+.hero-text {
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 300;
+  letter-spacing: 4px;
+  position: absolute;
+  top: 27%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .header-container {
@@ -538,8 +551,6 @@ p {
 
 .ne-social .grey-logo {
   width: 3.6rem;
-  /* margin-left: 1.2rem; */
-  z-index: 1;
 }
 
 .ne-social > a:hover .grey-logo {
@@ -548,32 +559,12 @@ p {
 
 .ne-social > a:hover .color-logo {
   opacity: 1;
-  z-index: 2;
 }
 
 .ne-social .color-logo {
   width: 3.6rem;
-  /* margin-left: 1.2rem; */
   opacity: 0;
-  z-index: 0;
 }
-
-/* .ne-sm {
-  width: 36px;
-  margin-right: 2rem;
-  -webkit-filter: contrast(75%) brightness(120%) grayscale(100%);
-  filter: contrast(75%) brightness(120%) grayscale(100%);
-} */
-
-/* .ne-sm:hover {
-  -webkit-filter: grayscale(0%);
-  filter: none;
-  -webkit-transition: 0.2s -webkit-filter ease-out;
-  -moz-transition: 0.2s -moz-filter ease-out;
-  -o-transition: 0.2s -o-filter ease-out;
-  transition: 0.2s -webkit-filter ease-out;
-  cursor: pointer;
-} */
 
 .ne-arrow-left {
   width: 24px;
@@ -679,7 +670,7 @@ p {
 .footer-social .grey-logo {
   width: 20px;
   margin-left: 1.2rem;
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 .footer-social > a:hover .grey-logo {
@@ -688,14 +679,14 @@ p {
 
 .footer-social > a:hover .color-logo {
   opacity: 1;
-  z-index: 2;
+  /* z-index: 2; */
 }
 
 .footer-social .color-logo {
   width: 20px;
   margin-left: 1.2rem;
   opacity: 0;
-  z-index: 0;
+  /* z-index: 0; */
 }
 
 .fb-logo {
