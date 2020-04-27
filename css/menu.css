@@ -31,62 +31,16 @@
   align-items: center;
   justify-content: center;
 }
-/* 
+
 @media only screen and (max-width: 1199px) {
   .menu-wrap .menu-toggler {
-    position: absolute;
     top: 30px;
-    right: 5%;
-    z-index: 1;
-    width: 40px;
-    height: 40px;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .menu-wrap .hamburger {
-    position: absolute;
-    top: 15px;
-    right: 5%;
-    z-index: 1;
-    width: 20px;
-    height: 20px;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    top: 30px;
   }
 }
-
-@media only screen and (max-width: 767px) {
-  .menu-wrap .menu-toggler {
-    position: absolute;
-    top: 30px;
-    right: 5%;
-    z-index: 1;
-    width: 40px;
-    height: 40px;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .menu-wrap .hamburger {
-    position: absolute;
-    top: 15px;
-    right: 5%;
-    z-index: 1;
-    width: 20px;
-    height: 20px;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-} */
 
 /* Hamburger lines */
 .menu-wrap .hamburger > div {
@@ -149,16 +103,6 @@
   display: block;
 }
 
-/* .menu-wrap .menu-toggler:checked ~ .header-container {
-  visibility: hidden;
-} */
-/* 
-.menu-wrap .menu-toggler:checked ~ .ham-menu > div > ul,
-.menu-wrap .menu-toggler:checked ~ .ham-menu > div > section {
-  opacity: 1;
-  transition: opacity 0.5s ease;
-} */
-
 /* Menu items */
 .menu-wrap .ham-menu {
   position: relative;
@@ -169,6 +113,7 @@
   background: #e5e5e5;
   display: none;
   animation: appear 0.5s;
+  pointer-events: auto;
 }
 
 @keyframes appear {
@@ -180,36 +125,60 @@
   }
 }
 
-.menu-wrap .ham-menu .ham-menu-wrapper {
-  width: 50%;
-  margin: 0 auto;
-  padding-top: 4rem;
+.ham-menu-header {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.ham-menu-wrapper {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  font-family: "Blair";
-  font-weight: 200;
-  font-size: 1rem;
-  text-transform: uppercase;
-  align-items: center;
+  grid-template-columns: repeat(7, 1fr);
+  justify-content: space-between;
   justify-items: center;
-  text-align: center;
+  align-items: center;
 }
 
-.menu-wrap .ham-menu .ham-menu-wrapper a {
-  padding-top: 4.5rem;
-  color: #000;
-  font-weight: 300;
-  pointer-events: auto;
-  z-index: 0;
+.ham-menu-wrapper > li > a {
+  color: rgba(0, 0, 0, 0.85);
+  font-family: "Blair";
+  font-size: 0.8rem;
+  font-weight: 200;
+  text-transform: uppercase;
 }
 
-.menu-wrap .ham-menu .ham-menu-wrapper .ham-logo {
+.ham-menu-wrapper > a > img {
   width: 150px;
-  height: 140px;
-  background-image: url(/img/main-logo-noshadow.png);
-  background-size: contain;
+  margin-bottom: 42px;
+  padding-right: 10px;
 }
 
+@media only screen and (max-width: 999px) {
+  .ham-menu-wrapper > li {
+    display: none;
+  }
+
+  .ham-menu-wrapper > a > img {
+    margin-left: 40px;
+    padding: 0;
+    width: 120px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ham-menu-wrapper > li {
+    display: none;
+  }
+
+  .ham-menu-wrapper > a > img {
+    margin-left: 20px;
+    width: 100px;
+  }
+}
+
+/* toggler menu main */
 .menu-wrap .ham-menu .ham-menu-list {
   position: absolute;
   top: 20%;
@@ -223,11 +192,10 @@
   justify-content: center;
   opacity: 1;
   transition: opacity 0.4s ease;
-  pointer-events: auto;
 }
 
 .menu-wrap .ham-menu .ham-menu-list li {
-  margin-bottom: 3rem;
+  margin-bottom: 30px;
 }
 
 .menu-wrap .ham-menu .ham-menu-list li a {
@@ -244,11 +212,26 @@
   color: #000;
 }
 
-/* .menu-wrap .ham-menu .ham-footer {
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: auto;
-} */
+@media only screen and (max-width: 1199px) {
+  .menu-wrap .ham-menu .ham-menu-list li {
+    margin-bottom: 25px;
+  }
+
+  .menu-wrap .ham-menu .ham-menu-list li a {
+    /* font-size: 10px; */
+  }
+}
+
+@media only screen and (max-width: 999px) {
+  .menu-wrap .ham-menu .ham-menu-list {
+    top: 10%;
+    height: 70%;
+  }
+
+  .menu-wrap .ham-menu .ham-menu-list li a {
+    font-size: 12px;
+  }
+}
 
 .menu-wrap .ham-menu .ham-footer .footer-container {
   width: 100%;

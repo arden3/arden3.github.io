@@ -193,24 +193,20 @@ h5 {
   }
 
   .home-main-logo > img {
-    margin-left: 25px;
+    margin-left: 40px;
     padding: 0;
     width: 120px;
   }
 }
 
 @media only screen and (max-width: 767px) {
-  .home-main-menu > ul > li {
-    display: none;
-  }
   .home-hero-text > h2 {
     letter-spacing: 1px;
     font-size: 26px;
   }
 
   .home-main-logo > img {
-    margin: 20px 0 0 10px;
-    padding: 0;
+    margin-left: 20px;
     width: 100px;
   }
 }
@@ -1127,7 +1123,7 @@ h5 {
   top: 2%;
   left: 25%;
   transform: translateX(-25%);
-  -webkit-transform: translate(-25%);
+  -webkit-transform: translateX(-25%);
 }
 
 .ig-logo {
@@ -1135,21 +1131,21 @@ h5 {
   top: 2%;
   left: 50%;
   transform: translateX(-50%);
-  -webkit-transform: translate(-50%);
+  -webkit-transform: translateX(-50%);
 }
 .be-logo {
   position: absolute;
   top: 2%;
   left: 75%;
   transform: translateX(-75%);
-  -webkit-transform: translate(-75%);
+  -webkit-transform: translateX(-75%);
 }
 .pi-logo {
   position: absolute;
   top: 2%;
   left: 100%;
   transform: translateX(-100%);
-  -webkit-transform: translate(-100%);
+  -webkit-transform: translateX(-100%);
 }
 
 @media only screen and (max-width: 1199px) {
@@ -1163,7 +1159,49 @@ h5 {
   }
 
   .footer-social {
-    display: none;
+    margin: 0 auto;
+    position: relative;
+    width: 500px;
+  }
+
+  .footer-social .grey-logo {
+    width: 30px;
+    margin-left: 0;
+  }
+
+  .footer-social .color-logo {
+    width: 30px;
+    margin-left: 0;
+  }
+
+  .footer-social .fb-logo {
+    top: -75px;
+  }
+
+  .footer-social .tw-logo {
+    top: -75px;
+  }
+
+  .footer-social .ig-logo {
+    top: -75px;
+  }
+  .footer-social .be-logo {
+    top: -75px;
+  }
+  .footer-social .pi-logo {
+    top: -75px;
+  }
+
+  .footer-links > a {
+    font-weight: 200;
+    font-size: 10px;
+    padding-right: 5px;
+  }
+
+  .footer-text {
+    font-weight: 200;
+    font-size: 8px;
+    padding-top: 25px;
   }
 }
 
@@ -1178,6 +1216,20 @@ h5 {
     font-weight: 200;
     font-size: 8px;
     padding-top: 25px;
+  }
+
+  .footer-social {
+    margin: 0 auto;
+    position: relative;
+    width: 300px;
+  }
+
+  .footer-social .grey-logo {
+    width: 24px;
+  }
+
+  .footer-social .color-logo {
+    width: 24px;
   }
 }
 
