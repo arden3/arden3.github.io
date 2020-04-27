@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.cdnfonts.com/css/optima" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/flickity.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/menu.css" />
-    <link rel="stylesheet" href="../css/pages.css" />
+    <link rel="stylesheet" href="/css/tiny-slider.css" />
+    <!-- <link rel="stylesheet" href="/css/flickity.css" /> -->
+    <link rel="stylesheet" href="/css/pages.css" />
+    <link rel="stylesheet" href="/css/menu.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <title>Mondreem</title>
   </head>
   <body>
@@ -131,24 +131,41 @@
     
 <!-- Main menu -->
 <header>
-  <div class="hero-image">
-    <ul class="header-container">
+  <div class="home-hero-video">
+    <video
+      class="home-hero-content"
+      autoplay
+      muted
+      loop
+      poster="/img/mondreem-hero-canvas.jpg"
+      id="md-video"
+    >
+      >
+      <source src="/img/mondreem-hero.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="home-main-menu">
+    <ul>
+      <li></li>
       <li>
         <a href="/services">Services</a>
       </li>
       <li>
         <a href="/projects">Projects</a>
       </li>
-      <a href="/" class="logo"></a>
+      <a href="/" class="home-main-logo"
+        ><img src="/img/svgs/mondreem-logo-black.svg" alt=""
+      /></a>
       <li>
         <a href="/residences">Residences</a>
       </li>
       <li>
         <a href="/atelier">Atelier</a>
       </li>
+      <li></li>
     </ul>
   </div>
-  <div class="hero-text">
+  <div class="home-hero-text">
     <h2>
       Sophisticated design
     </h2>
@@ -156,8 +173,8 @@
 </header>
 
 <!-- Services -->
-<section class="services">
-  <div class="services-content">
+<section class="home-services">
+  <div class="home-services-content">
     <p class="scp-1">
       <strong>
         We strive to create architecture that evokes feelings, inspires and
@@ -173,26 +190,26 @@
     </p>
     <a href="/services" class="scp-button btn">FIND OUT MORE</a>
   </div>
-  <div class="services-links">
-    <div>
+  <div class="home-services-links">
+    <div class="slide">
       <a href="/services/development/"
         ><img src="/img/services-1.png" alt="Construction project in progress"
       /></a>
       <p>Development Management</p>
     </div>
-    <div>
+    <div class="slide">
       <a href="/services/architecture/"
         ><img src="/img/services-2.png" alt="A skyscraper"
       /></a>
       <p>Architecture</p>
     </div>
-    <div>
+    <div class="slide">
       <a href="/services/interior/"
         ><img src="/img/services-3.png" alt="Custom designed interior"
       /></a>
       <p>Interior Design</p>
     </div>
-    <div>
+    <div class="slide">
       <a href="/services/specialty/"
         ><img src="/img/services-4.png" alt="Custom designed smart home"
       /></a>
@@ -201,26 +218,19 @@
   </div>
 </section>
 
-<!-- Projects (need better responsiveness) -->
-<section class="projects">
-  <div class="p-outer">
+<!-- Projects -->
+<section class="home-projects">
+  <div id="badass-slider" class="home-projects-main">
     <div>
-      <img
-        class="arrow-left"
-        src="img/left-arrow.png"
-        alt="left arrow chevron"
-      />
-    </div>
-    <div class="projects-content">
-      <div id="project-gallery-1" class="project-grid show">
-        <div>
-          <h4 class="pr">- Latest Projects -</h4>
+      <div class="home-projects-showcase-1 home-projects-flex">
+        <div class="home-project-item">
+          <h4>- Latest Projects -</h4>
           <a href="#"
-            ><h3 class="p-title">
+            ><h3>
               Atlantic Penthouse
             </h3></a
           >
-          <p class="project-text">
+          <p>
             We are driven by the passion for design excellence with the ultimate
             goal of creating elegant, stylish interiors for our clients that
             capture their personality and their aspirations. We offer a full
@@ -232,12 +242,7 @@
           <a href="#" class="p-btn btn">See more projects</a>
         </div>
         <div class="p-container">
-          <a href="#"
-            ><img
-              src="img/projects-1.jpg"
-              alt="Atlantic Penthouse furnished room"
-              class="p-img"
-          /></a>
+          <a href="#"><div class="p-image-1"></div></a>
           <a href="#" class="p-overlay"> </a>
           <div class="p-overlay-text">
             <div class="pot-1">
@@ -249,15 +254,17 @@
           </div>
         </div>
       </div>
-      <div id="project-gallery-2" class="project-grid">
-        <div>
-          <h4 class="pr">- Latest Projects -</h4>
+    </div>
+    <div>
+      <div class="home-projects-showcase-2 home-projects-flex">
+        <div class="home-project-item">
+          <h4>- Latest Projects -</h4>
           <a href="#"
-            ><h3 class="p-title">
+            ><h3>
               Ame Concept Store
             </h3></a
           >
-          <p class="project-text">
+          <p>
             Our expertise extends across the areas of development management,
             architecture, interior design and specialty construction. In
             addition, as a result of years of experience in bespoke furniture
@@ -268,12 +275,7 @@
           <a href="#" class="p-btn btn">See more projects</a>
         </div>
         <div class="p-container">
-          <a href="#"
-            ><img
-              src="img/projects-2.jpg"
-              alt="Ame concept store completed"
-              class="p-img"
-          /></a>
+          <a href="#"><div class="p-image-2"></div></a>
           <a href="#" class="p-overlay"> </a>
           <div class="p-overlay-text">
             <div class="pot-1">
@@ -286,13 +288,10 @@
         </div>
       </div>
     </div>
-    <div>
-      <img
-        class="arrow-right"
-        src="img/right-arrow.png"
-        alt="right arrow chevron"
-      />
-    </div>
+  </div>
+  <div id="home-slider-control-1">
+    <img class="home-sc1-left" src="img/left-arrow.png" alt="" />
+    <img class="home-sc1-right" src="img/right-arrow.png" alt="" />
   </div>
 </section>
 
@@ -306,6 +305,10 @@
         class="grayscale"
         id="at-image"
       />
+      <div class="at-overlay">
+        <h2>First Collection</h2>
+        <a href="/atelier" class="btn-transparent">Find Out More</a>
+      </div>
     </div>
     <div class="at-content">
       <h3>Atelier Mondreem</h3>
@@ -347,30 +350,64 @@
 <!-- News  -->
 <section class="news">
   <div class="ne-container">
-    <div
-      class="carousel ne-gallery"
-      data-flickity='{ "freeScroll": true, "freeScrollFriction": 0.03, "imagesLoaded": true, "percentPosition": false, "wrapAround": true, "autoPlay": 5000 }'
-    >
-      <img class="ne-image" src="img/news-1.jpg" alt="porcelanosa visit" />
-      <img
-        class="ne-image"
-        src="img/news-2.jpg"
-        alt="porcelanosa factory floor"
-      />
-      <img class="ne-image" src="img/news-3.jpg" alt="porcelanosa showroom" />
-      <img
-        class="ne-image"
-        src="img/news-4.jpg"
-        alt="porcelanosa new materials"
-      />
+    <div id="home-carousel-2" class="ne-gallery">
+      <ul class="my-slider news-social-icons">
+        <li class="glide__slide">
+          <img class="ne-image" src="img/news-1.jpg" alt="porcelanosa visit" />
+        </li>
+        <li class="glide__slide">
+          <img
+            class="ne-image"
+            src="img/news-2.jpg"
+            alt="porcelanosa factory floor"
+          />
+        </li>
+        <li class="glide__slide">
+          <img
+            class="ne-image"
+            src="img/news-3.jpg"
+            alt="porcelanosa showroom"
+          />
+        </li>
+        <li class="glide__slide">
+          <img
+            class="ne-image"
+            src="img/news-4.jpg"
+            alt="porcelanosa new materials"
+          />
+        </li>
+      </ul>
+      <ul
+        id="home-slider-control-2"
+        class="customize-controls"
+        aria-label="Carousel Navigation"
+        tabindex="0"
+      >
+        <li
+          class="prev"
+          data-controls="prev"
+          aria-controls="customize"
+          tabindex="-1"
+        >
+          <img src="img/left-arrow-white.png" alt="" />
+        </li>
+        <li
+          class="next"
+          data-controls="next"
+          aria-controls="customize"
+          tabindex="-1"
+        >
+          <img src="img/right-arrow-white.png" alt="" />
+        </li>
+      </ul>
     </div>
     <div class="ne-content">
-      <h4 class="ne-subtitle">- Latest Projects -</h4>
+      <h4 class="ne-subtitle">- Latest News -</h4>
       <a href="#"
-        ><h3 class="ne-title">
+        ><h4 class="ne-title">
           Our Partner
-        </h3>
-        <h1>Porcelanosa</h1></a
+        </h4>
+        <h2>Porcelanosa</h2></a
       >
       <p class="ne-text">
         In February, we visited our long time partner Porcelanosa Group.
@@ -458,7 +495,7 @@
 <section class="contact">
   <div class="co-wrapper">
     <div class="co-upper">
-      <div class="co-header">Let's work together</div>
+      <h4>Let's work together</h4>
       <p>
         If you would like to discuss a future interior design project, or learn
         more about Mondreem, please contact us.
@@ -466,41 +503,48 @@
       <a href="/contact" class="co-btn btn" id="modal-btn">Get in touch</a>
     </div>
     <div class="co-lower">
-      <div class="co-lower-left">
-        <div class="co-header">Mongolia</div>
-        <p>(976) 11 - 325391</p>
-        <br />
-        <p>info@mondreem.com</p>
-        <p class="co-lower-text">
-          Sukhbaatar district, Str-1, <br />
-          Olympic 9, 12240, Pyramid Building, <br />
-          Ulaanbaatar, Mongolia.
-        </p>
-        <iframe
-          width="100%"
-          height="420px"
-          frameborder="0"
-          src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJvZHKKUOTll0RnfW8RN5D7NM&key=AIzaSyAW8cHTSPdEbLg0lJQrHfZyIGTfsa-zBBE"
-          allowfullscreen
-        ></iframe>
+      <div class="co-lower-content">
+        <div id="map">
+          <iframe
+            width="100%"
+            height="100%"
+            frameborder="0"
+            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJq70df4UIoBIR912ZwS5m2qI&key=AIzaSyAW8cHTSPdEbLg0lJQrHfZyIGTfsa-zBBE"
+          ></iframe>
+        </div>
+        <div id="text">
+          <h4>Spain</h4>
+          <p>(976) 11 - 325391</p>
+          <br />
+          <p>info@mondreem.com</p>
+          <p class="co-lower-text">
+            Pol Ind S-3 Fase II, Calle A, <br />
+            no. 9, 12180 Cabanes, <br />
+            Castellon, Spain.
+          </p>
+        </div>
       </div>
-      <div class="co-lower-right">
-        <div class="co-header">Spain</div>
-        <p>(976) 11 - 325391</p>
-        <br />
-        <p>info@mondreem.com</p>
-        <p class="co-lower-text">
-          Pol Ind S-3 Fase II, Calle A, <br />
-          no. 9, 12180 Cabanes, <br />
-          Castellon, Spain.
-        </p>
-        <div id="map"></div>
-        <iframe
-          width="100%"
-          height="420px"
-          frameborder="0"
-          src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJq70df4UIoBIR912ZwS5m2qI&key=AIzaSyAW8cHTSPdEbLg0lJQrHfZyIGTfsa-zBBE"
-        ></iframe>
+      <div class="co-lower-content">
+        <div id="map">
+          <iframe
+            width="100%"
+            height="100%"
+            frameborder="0"
+            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJvZHKKUOTll0RnfW8RN5D7NM&key=AIzaSyAW8cHTSPdEbLg0lJQrHfZyIGTfsa-zBBE"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div id="text">
+          <h4>Mongolia</h4>
+          <p>(976) 11 - 325391</p>
+          <br />
+          <p>info@mondreem.com</p>
+          <p class="co-lower-text">
+            Sukhbaatar district, Str-1, <br />
+            Olympic 9, 12240, Pyramid Building, <br />
+            Ulaanbaatar, Mongolia.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -613,12 +657,16 @@
             <a href="/contact">Contact</a>
             <a href="/legal">Legal Notice</a>
           </div>
-          <p class="footer-text">&copy 2020 Mondreem. All rights reserved</p>
+          <p class="footer-text">
+            &copy 2020 Mondreem. All rights reserved
+          </p>
         </div>
       </div>
     </footer>
-    <script src="/js/main.js"></script>
+
+    <script src="/js/tiny-slider.js"></script>
     <script src="/js/modal.js"></script>
-    <script src="/js/flickity.pkgd.js"></script>
+    <script src="/js/main.js"></script>
+    <!-- <script src="/js/flickity.pkgd.js"></script> -->
   </body>
 </html>

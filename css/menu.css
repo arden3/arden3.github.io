@@ -31,6 +31,62 @@
   align-items: center;
   justify-content: center;
 }
+/* 
+@media only screen and (max-width: 1199px) {
+  .menu-wrap .menu-toggler {
+    position: absolute;
+    top: 30px;
+    right: 5%;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu-wrap .hamburger {
+    position: absolute;
+    top: 15px;
+    right: 5%;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .menu-wrap .menu-toggler {
+    position: absolute;
+    top: 30px;
+    right: 5%;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu-wrap .hamburger {
+    position: absolute;
+    top: 15px;
+    right: 5%;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+} */
 
 /* Hamburger lines */
 .menu-wrap .hamburger > div {
