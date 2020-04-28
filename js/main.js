@@ -15,7 +15,7 @@ listenToHover()
 var a = window.matchMedia('(max-width: 767px)')
 if (a.matches) {
   var home_slider_one = tns({
-    container: '.home-services-links',
+    container: '.services-slider',
     slideBy: 'page',
     speed: 400,
     mouseDrag: true,

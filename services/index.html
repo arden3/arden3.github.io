@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+    <link rel="stylesheet" href="/css/tiny-slider.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/menu.css" />
     <link rel="stylesheet" href="/css/pages.css" />
@@ -133,22 +133,26 @@
     </div>
 
     <!-- Main menu -->
-    <header>
+    <header class="uni-header">
       <div class="uni-menu-wrapper">
         <ul class="uni-menu">
+              <li></li>
           <li>
             <a href="/services">Services</a>
           </li>
           <li>
             <a href="/projects">Projects</a>
           </li>
-          <a href="/" class="uni-logo"></a>
+      <a href="/" class="uni-main-logo"
+        ><img src="/img/svgs/mondreem-logo-black.svg" alt=""
+      /></a>
           <li>
             <a href="/residences">Residences</a>
           </li>
           <li>
             <a href="/atelier">Atelier</a>
           </li>
+                <li></li>
         </ul>
       </div>
     </header>
@@ -158,26 +162,26 @@
   <div class="services-main centered">
     <h2>Client services</h2>
   </div>
-  <div class="services-links">
-    <div>
+  <div class="services-links services-slider">
+    <div class="services-links-text slide">
       <p>Development Management</p>
       <a href="/services/development"
         ><img src="/img/services-1.png" alt="Construction project in progress"
       /></a>
     </div>
-    <div>
+    <div class="slide">
       <p>Architecture</p>
       <a href="/services/architecture"
         ><img src="/img/services-2.png" alt="A skyscraper"
       /></a>
     </div>
-    <div>
+    <div class="slide">
       <p>Interior Design</p>
       <a href="/services/interior"
         ><img src="/img/services-3.png" alt="Custom designed interior"
       /></a>
     </div>
-    <div>
+    <div class="slide">
       <p>Specialty Construction</p>
       <a href="/services/specialty"
         ><img src="/img/services-4.png" alt="Custom designed smart home"
@@ -232,7 +236,7 @@
 </section>
   
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer-actual">
       <div class="footer-container">
         <div class="footer-social">
           <a href="https://www.facebook.com/MondreemLLC" class="fb-href"
@@ -307,6 +311,6 @@
         </div>
       </div>
     </footer>
-    <script src="/js/modal.js"></script>
+    <script src="/js/modal.js"></script><script src="/js/tiny-slider.js"></script><script src="/js/main.js"></script>
   </body>
 </html>

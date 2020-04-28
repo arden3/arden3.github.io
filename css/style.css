@@ -290,6 +290,7 @@ h5 {
     width: 60%;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
+    grid-row-gap: 64px;
   }
 }
 
@@ -483,11 +484,11 @@ h5 {
   }
 
   .home-sc1-left {
-    top: 610px;
+    top: 592px;
   }
 
   .home-sc1-right {
-    top: 610px;
+    top: 592px;
   }
 
   .home-project-item > .p-btn {
@@ -1154,6 +1155,10 @@ h5 {
     height: 100px;
   }
 
+  .footer-actual > div > .footer-social {
+    display: none;
+  }
+
   .footer-text {
     padding-top: 25px;
   }
@@ -1271,35 +1276,4 @@ h5 {
 .btn-transparent:hover {
   color: var(--md-brown);
   transition: all 0.2s ease-out;
-}
-
-/* Universal header  */
-.uni-menu-wrapper .uni-menu {
-  width: 50%;
-  margin: 0 auto;
-  padding-top: 4rem;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  font-family: "Blair";
-  font-weight: 200;
-  font-size: 1rem;
-  text-transform: uppercase;
-  align-items: center;
-  justify-items: center;
-  text-align: center;
-}
-
-.uni-menu-wrapper a {
-  padding-top: 4.5rem;
-  color: #000;
-  font-weight: 300;
-  pointer-events: auto;
-  z-index: 0;
-}
-
-.uni-menu-wrapper .uni-logo {
-  width: 150px;
-  height: 140px;
-  background-image: url(/img/main-logo-noshadow.png);
-  background-size: contain;
 }
