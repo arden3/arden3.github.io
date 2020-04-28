@@ -25,14 +25,14 @@
   color: rgba(0, 0, 0, 0.85);
   /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
   font-family: "Blair";
-  font-size: 0.8rem;
-  font-weight: 300;
+  font-size: 10px;
+  font-weight: 200;
   text-transform: uppercase;
 }
 
 .uni-menu > a > img {
   width: 150px;
-  margin-bottom: 42px;
+  margin-bottom: 40px;
   padding-right: 10px;
 }
 
@@ -262,9 +262,8 @@
 .atelier-main > h2 {
   position: absolute;
   font-size: 20px;
-  font-weight: 300;
   letter-spacing: 4px;
-  top: 30%;
+  top: 25%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -273,12 +272,41 @@
 .atelier-main > h3 {
   position: absolute;
   font-size: 18px;
-  font-weight: 300;
   letter-spacing: 7px;
   bottom: 20%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 999px) {
+  .atelier-main > h2 {
+    width: 100%;
+    font-size: 16px;
+    top: 20%;
+  }
+
+  .atelier-main > h3 {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .atelier-wrapper {
+    height: calc(100vh - 318px);
+    /* margin-bottom: -260px; */
+  }
+
+  .atelier-main > h2 {
+    font-size: 12px;
+    top: 25%;
+  }
+
+  .atelier-main > h3 {
+    font-size: 12px;
+    bottom: 24%;
+  }
 }
 
 /* ********************************************
@@ -287,19 +315,21 @@
 .careers-content-1 {
   width: 65%;
   margin: 0 auto;
-  padding-top: 17rem;
+  padding-top: 170px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 100px;
-
   justify-items: center;
   text-align: justify;
+}
+
+.careers-content-1-image {
+  order: 2;
 }
 
 .careers-text > ul {
   list-style: initial;
   margin-left: 20px;
-  font-size: 12px;
 }
 
 .careers-divider {
@@ -324,7 +354,6 @@
 .careers-content-2 > div > h6,
 .careers-content-3 > div > h6 {
   font-family: Blair;
-  font-weight: 300;
   font-size: 12px;
   line-height: 24px;
   text-transform: uppercase;
@@ -334,11 +363,108 @@
 }
 
 .career-arrow {
-  width: 20px;
+  width: 16px;
   display: inline-block;
   margin-left: 20px;
   position: absolute;
-  bottom: 10%;
+  bottom: 15%;
+}
+
+@media only screen and (max-width: 1199px) {
+  .careers-content-1 {
+    width: 80%;
+    padding-top: 80px;
+    grid-template-columns: 1.5fr 1fr;
+    grid-gap: 30px;
+  }
+
+  .careers-text > h5 {
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
+
+  .careers-divider {
+    margin: 100px auto;
+    width: 80%;
+  }
+
+  .careers-content-2,
+  .careers-content-3 {
+    width: 80%;
+    padding-bottom: 100px;
+    display: block;
+  }
+
+  .careers-content-2 > div > h6,
+  .careers-content-3 > div > h6 {
+    font-size: 10px;
+    line-height: 24px;
+    padding: 20px 0;
+  }
+
+  .career-arrow {
+    width: 12px;
+    display: inline-block;
+    margin-left: 20px;
+    position: absolute;
+    top: 40%;
+    transform: rotate(90deg);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .careers-content-1 {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 130px;
+    display: block;
+    text-align: left;
+    position: relative;
+  }
+
+  .careers-content-1-image {
+    margin-bottom: 40px;
+  }
+
+  .careers-text {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .careers-text > h5 {
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+
+  .careers-divider {
+    margin: 70px auto;
+    width: 70%;
+  }
+
+  .careers-content-2,
+  .careers-content-3 {
+    width: 70%;
+    text-align: justify;
+  }
+
+  .careers-content-2 > div > h6,
+  .careers-content-3 > div > h6 {
+    font-size: 10px;
+    line-height: 24px;
+    padding: 20px 0;
+  }
+
+  .career-arrow {
+    width: 12px;
+    display: inline-block;
+    margin-left: 20px;
+    position: absolute;
+    top: 40%;
+    transform: rotate(90deg);
+  }
 }
 
 /* ********************************************
@@ -353,7 +479,6 @@
 .gallery-content {
   width: 70%;
   margin: 0 auto;
-  /* padding-bottom: 100px; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
@@ -401,7 +526,9 @@
   height: 25vw;
 }
 
-/* Legal */
+/* ********************************************
+--------------------LEGAL----------------------
+******************************************** */
 .legal-main {
   margin-top: 180px;
 }

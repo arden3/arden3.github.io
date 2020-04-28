@@ -144,14 +144,14 @@
 .ham-menu-wrapper > li > a {
   color: rgba(0, 0, 0, 0.85);
   font-family: "Blair";
-  font-size: 0.8rem;
+  font-size: 10px;
   font-weight: 200;
   text-transform: uppercase;
 }
 
 .ham-menu-wrapper > a > img {
   width: 150px;
-  margin-bottom: 42px;
+  margin-bottom: 40px;
   padding-right: 10px;
 }
 
@@ -202,7 +202,7 @@
   font-family: Blair;
   font-weight: 200;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 8px;
   color: rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
 }
