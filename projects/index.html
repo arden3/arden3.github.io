@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/menu.css" />
     <link rel="stylesheet" href="/css/pages.css" />
-    <title>Atelier</title>
+    <title>Projects</title>
   </head>
   <body>
     <!-- Toggle menu -->
@@ -158,68 +158,212 @@
     </header>
 
     
-<main class="wrapper-70">
+<main class="projects-main">
   <h2 class="projects-header-text">Selected projects</h2>
+  <div class="projects-dropdown">
+    <select name="projects" id="project-selector">
+      <option value="all">View All</option>
+      <option value="residential">Residential</option>
+      <option value="commercial">Commercial</option>
+    </select>
+  </div>
   <div class="projects-buttons">
-    <button>Residence</button>
-    <button>Commercial</button>
-    <button>View All</button>
-  </div>
-  <div class="projects-content">
-    <div class="grid-3">
-      <img src="/img/projects-ame-1.jpg" alt="" />
-      <img src="/img/projects-ame-2.jpg" alt="" />
-      <img src="/img/projects-ame-3.jpg" alt="" />
+    <div>
+      <button id="button-residential">Residential</button>
+      <img src="/img/pages/projects/arrow_down.png" class="projects-arrow hidden-arrow"/>
     </div>
-    <div class="flexbox">
-      <p>Ame concept store</p>
+    <div>
+      <button id="button-commercial">Commercial</button>
+      <img src="/img/pages/projects/arrow_down.png" class="projects-arrow hidden-arrow"/>
+    </div>
+    <div>
+      <button id="button-all" class="projects-selected">View All</button>
+      <img src="/img/pages/projects/arrow_down.png" class="projects-arrow shown-arrow"/>
+    </div>
+  </div>
+  <div class="projects-content residential">
+    <div class="projects-grid-3">
+      <a href="#">
+        <img src="/img/pages/projects/projects-atlantic-1.jpg" class="grid-first-child"/>
+        <img src="/img/pages/projects/projects-atlantic-2.jpg"/>
+        <img src="/img/pages/projects/projects-atlantic-3.jpg"/>
+      </a>
+    </div>
+    <div class="projects-flexbox">
+      <h5>ATLANTIC PENTHOUSE</h5>
+      <p>PRIVATE RESIDENCE</p>
+    </div>
+  </div>
+  <div class="projects-content commercial">
+    <div class="projects-grid-3">
+      <a href="#">
+        <img src="/img/pages/projects/projects-ame-1.jpg" class="grid-first-child"/>
+        <img src="/img/pages/projects/projects-ame-2.jpg"/>
+        <img src="/img/pages/projects/projects-ame-3.jpg"/>
+      </a>
+    </div>
+    <div class="projects-flexbox">
+      <h5>Ame concept store</h5>
       <p>Commercial store</p>
     </div>
   </div>
-  <div class="projects-content">
-    <div class="grid-3">
-      <img src="/img/projects-olympic-1.jpg" alt="" />
-      <img src="/img/projects-olympic-2.jpg" alt="" />
-      <img src="/img/projects-olympic-3.jpg" alt="" />
+  <div class="projects-content residential">
+    <div class="projects-grid-3">
+      <a href="#">
+        <img src="/img/pages/projects/projects-meru-1.jpg" class="grid-first-child"/>
+        <img src="/img/pages/projects/projects-meru-2.jpg"/>
+        <img src="/img/pages/projects/projects-meru-3.jpg"/>
+      </a>
     </div>
-    <div class="flexbox">
-      <p>Olympic nine office</p>
-      <p>Private office</p>
-    </div>
-  </div>
-  <div class="projects-content">
-    <div class="grid-3">
-      <img src="/img/projects-isaia-1.jpg" alt="" />
-      <img src="/img/projects-isaia-2.jpg" alt="" />
-      <img src="/img/projects-isaia-3.jpg" alt="" />
-    </div>
-    <div class="flexbox">
-      <p>Isaia store</p>
-      <p>Commercial store</p>
+    <div class="projects-flexbox">
+      <h5>MERU PENTHOUSE</h5>
+      <p>PRIVATE RESIDENCE</p>
     </div>
   </div>
-  <div class="projects-content">
-    <div class="">
-      <img src="/img/projects-parktwin.jpg" alt="" />
+  <div class="projects-content commercial">
+    <div class="projects-grid-3">
+      <a href="#">
+        <img src="/img/pages/projects/projects-olympic-1.jpg" class="grid-first-child"/>
+        <img src="/img/pages/projects/projects-olympic-2.jpg"/>
+        <img src="/img/pages/projects/projects-olympic-3.jpg"/>
+      </a>
     </div>
-    <div class="flexbox">
-      <p>Park twin tower</p>
-      <p>Commercial building</p>
+    <div class="projects-flexbox">
+      <h5>OLYMPIC NINE OFFICE</h5>
+      <p>PRIVATE OFFICE</p>
     </div>
   </div>
-  <div class="projects-content">
-    <div class="">
-      <img src="/img/projects-mandala.jpg" alt="" />
+  <div class="projects-content commercial">
+    <div class="projects-grid-3">
+      <a href="#">
+        <img src="/img/pages/projects/projects-isaia-1.jpg" class="grid-first-child"/>
+        <img src="/img/pages/projects/projects-isaia-2.jpg"/>
+        <img src="/img/pages/projects/projects-isaia-3.jpg"/>
+      </a>
     </div>
-    <div class="flexbox">
-      <p>Mandala tower</p>
-      <p>Commercial building</p>
+    <div class="projects-flexbox">
+      <h5>ISAIA STORE</h5>
+      <p>COMMERCIAL STORE</p>
     </div>
+  </div>
+  <div class="projects-content residential">
+    <div class="projects-grid-3">
+      <a href="#">
+        <img src="/img/pages/projects/projects-buenavista-1.jpg" class="grid-first-child"/>
+        <img src="/img/pages/projects/projects-buenavista-2.jpg"/>
+        <img src="/img/pages/projects/projects-buenavista-3.jpg"/>
+      </a>
+    </div>
+    <div class="projects-flexbox">
+      <h5>BUENA VISTA VILLA</h5>
+      <p>PRIVATE RESIDENCE</p>
+    </div>
+  </div>
+  <div class="projects-content residential">
+    <div class="projects-grid-3">
+      <a href="#">
+        <img src="/img/pages/projects/projects-magnolia-1.jpg" class="grid-first-child"/>
+        <img src="/img/pages/projects/projects-magnolia-2.jpg"/>
+        <img src="/img/pages/projects/projects-magnolia-3.jpg"/>
+      </a>
+    </div>
+    <div class="projects-flexbox">
+      <h5>MAGNOLIA RESIDENCE</h5>
+      <p>PRIVATE RESIDENCE</p>
+    </div>
+  </div>
+  <div class="projects-content residential">
+    <div class="projects-grid-3">
+      <a href="#">
+        <img src="/img/pages/projects/projects-addis-1.jpg" class="grid-first-child"/>
+        <img src="/img/pages/projects/projects-addis-2.jpg"/>
+        <img src="/img/pages/projects/projects-addis-3.jpg"/>
+      </a>
+    </div>
+    <div class="projects-flexbox">
+      <h5>ADDIS VIEW VILLA</h5>
+      <p>PRIVATE RESIDENCE</p>
+    </div>
+  </div>
+  <div class="projects-content residential">
+    <div class="projects-grid-3">
+      <a href="#">
+        <img src="/img/pages/projects/projects-sahara-1.jpg" class="grid-first-child"/>
+        <img src="/img/pages/projects/projects-sahara-2.jpg"/>
+        <img src="/img/pages/projects/projects-sahara-3.jpg"/>
+      </a>
+    </div>
+    <div class="projects-flexbox">
+      <h5>SAHARA PENTHOUSE</h5>
+      <p>PRIVATE RESIDENCE</p>
+    </div>
+  </div>
+  <div class="projects-content residential">
+    <div class="projects-grid-3">
+      <a href="#">
+        <img src="/img/pages/projects/projects-khuush-1.jpg" class="grid-first-child"/>
+        <img src="/img/pages/projects/projects-khuush-2.jpg"/>
+        <img src="/img/pages/projects/projects-khuush-3.jpg"/>
+      </a>
+    </div>
+    <div class="projects-flexbox">
+      <h5>KHUUSH VALLEY RESIDENCE</h5>
+      <p>PRIVATE RESIDENCE</p>
+    </div>
+  </div>
+  <div class="projects-content residential">
+    <div class="projects-grid-3">
+      <a href="#">
+        <img src="/img/pages/projects/projects-time-1.jpg" class="grid-first-child"/>
+        <img src="/img/pages/projects/projects-time-2.jpg"/>
+        <img src="/img/pages/projects/projects-time-3.jpg"/>
+      </a>
+    </div>
+    <div class="projects-flexbox">
+      <h5>TIME RESIDENCE</h5>
+      <p>PRIVATE RESIDENCE</p>
+    </div>
+  </div>
+  <div class="projects-content commercial">
+    <div class="projects-grid-1">
+      <a href="#"><img src="/img/pages/projects/projects-parktwin.jpg"/></a>
+    </div>
+    <div class="projects-flexbox">
+      <h5>PARK TWIN TOWER</h5>
+      <p>COMMERCIAL BUILDING</p>
+    </div>
+  </div>
+  <div class="projects-content commercial">
+    <div class="projects-grid-1">
+      <a href="#"><img src="/img/pages/projects/projects-mandala.jpg"/></a>
+    </div>
+    <div class="projects-flexbox">
+      <h5>MANDALA TOWER</h5>
+      <p>COMMERCIAL BUILDING</p>
+    </div>
+  </div>
+  <div class="projects-content commercial">
+    <div class="projects-grid-3">
+      <a href="#">
+        <img src="/img/pages/projects/projects-rolex-1.jpg" class="grid-first-child"/>
+        <img src="/img/pages/projects/projects-rolex-2.jpg"/>
+        <img src="/img/pages/projects/projects-rolex-3.jpg"/>
+      </a>
+    </div>
+    <div class="projects-flexbox">
+      <h5>ROLEX STORE</h5>
+      <p>COMMERCIAL STORE</p>
+    </div>
+  </div>
+ 
+
+  
+
   </div>
 </main>
 
 
-    <div class="end-note atelier-note">
+    <div class="end-note ">
       <h5>Let's work together</h5>
       <p>
         If you would like to discuss a future interior design project, or learn
@@ -339,6 +483,6 @@
         </div>
       </div>
     </footer>
-    <script src="/js/modal.js"></script>
+    <script src="/js/modal.js"></script><script src="/js/projects.js"></script>
   </body>
 </html>

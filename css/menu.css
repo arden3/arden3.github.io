@@ -36,7 +36,6 @@
   .menu-wrap .menu-toggler {
     top: 30px;
   }
-
   .menu-wrap .hamburger {
     top: 30px;
   }
@@ -163,7 +162,7 @@
   .ham-menu-wrapper > a > img {
     margin-left: 40px;
     padding: 0;
-    width: 120px;
+    width: 80px;
   }
 }
 
@@ -174,7 +173,7 @@
 
   .ham-menu-wrapper > a > img {
     margin-left: 20px;
-    width: 100px;
+    width: 80px;
   }
 }
 
