@@ -9,7 +9,7 @@
 
 .menu-wrap .menu-toggler {
   position: absolute;
-  top: 50px;
+  top: 95px;
   right: 5%;
   z-index: 2;
   cursor: pointer;
@@ -19,9 +19,9 @@
   pointer-events: auto;
 }
 
-.menu-wrap .hamburger {
+.menu-wrap .proj-hamburger {
   position: absolute;
-  top: 50px;
+  top: 95px;
   right: 5%;
   z-index: 1;
   width: 60px;
@@ -32,16 +32,56 @@
   justify-content: center;
 }
 
-@media only screen and (max-width: 999px) {
+.menu-wrap .hamburger {
+  position: absolute;
+  top: 95px;
+  right: 5%;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1199px) {
   .menu-wrap .menu-toggler {
-    top: 30px;
+    top: 50px;
+  }
+  .menu-wrap .proj-hamburger {
+    top: 50px;
   }
   .menu-wrap .hamburger {
-    top: 30px;
+    top: 50px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .menu-wrap .menu-toggler {
+    top: 25px;
+  }
+  .menu-wrap .proj-hamburger {
+    top: 25px;
+  }
+  .menu-wrap .hamburger {
+    top: 25px;
   }
 }
 
 /* Hamburger lines */
+.menu-wrap .proj-hamburger > div {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px/1px;
+  /* transition: all 0.4s ease; */
+}
+
 .menu-wrap .hamburger > div {
   position: relative;
   width: 100%;
@@ -52,6 +92,18 @@
   justify-content: center;
   border-radius: 15px/1px;
   transition: all 0.4s ease;
+}
+
+.menu-wrap .proj-hamburger > div:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+  border-top-right-radius: 15px 2px;
+  border-top-left-radius: 15px 2px;
 }
 
 .menu-wrap .hamburger > div:after {
@@ -66,6 +118,18 @@
   border-top-left-radius: 15px 2px;
 }
 
+.menu-wrap .proj-hamburger > div:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+  border-bottom-right-radius: 15px 2px;
+  border-bottom-left-radius: 15px 2px;
+}
+
 .menu-wrap .hamburger > div:before {
   content: "";
   position: absolute;
@@ -76,6 +140,26 @@
   background: inherit;
   border-bottom-right-radius: 15px 2px;
   border-bottom-left-radius: 15px 2px;
+}
+
+/* Toggler animation */
+.menu-wrap .menu-toggler:checked + .proj-hamburger > div {
+  transform: rotate(45deg);
+  background-color: #000;
+}
+
+.menu-wrap .menu-toggler:checked + .proj-hamburger > div:after {
+  top: 0;
+  transform: rotate(90deg);
+  border-bottom-right-radius: 15px 2px;
+  border-bottom-left-radius: 15px 2px;
+}
+
+.menu-wrap .menu-toggler:checked + .proj-hamburger > div:before {
+  top: 0;
+  transform: rotate(90deg);
+  border-top-right-radius: 15px 2px;
+  border-top-left-radius: 15px 2px;
 }
 
 /* Toggler animation */
@@ -126,7 +210,7 @@
 
 .ham-menu-header {
   position: absolute;
-  top: 5%;
+  top: 30px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -154,26 +238,25 @@
   padding-right: 10px;
 }
 
-@media only screen and (max-width: 999px) {
+@media only screen and (max-width: 1199px) {
   .ham-menu-wrapper > li {
     display: none;
   }
 
-  .ham-menu-wrapper > a > img {
-    margin-left: 40px;
-    padding: 0;
-    width: 80px;
+  .mondreem-main-logo {
+    width: 32px;
+    height: 32px;
+    margin: 50px 0 0 50px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: center center/contain no-repeat
+      url("/img/svgs/mondreem-logo-icon.svg");
   }
 }
 
 @media only screen and (max-width: 767px) {
-  .ham-menu-wrapper > li {
-    display: none;
-  }
-
-  .ham-menu-wrapper > a > img {
-    margin-left: 20px;
-    width: 80px;
+  .mondreem-main-logo {
+    margin: 25px 0 0 50px;
   }
 }
 

@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+    <link rel="stylesheet" href="/css/tiny-slider.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/menu.css" />
     <link rel="stylesheet" href="/css/pages.css" />
-    <title>Projects</title>
+    <title>Atlantic Penthouse</title>
   </head>
   <body>
     <!-- Toggle menu -->
     <div class="menu-wrap">
       <input type="checkbox" class="menu-toggler" />
-      <div class="hamburger"><div></div></div>
+      <div class="proj-hamburger"><div></div></div>
       <div class="ham-menu">
         <div>
           <div class="ham-menu-header">
@@ -25,7 +25,10 @@
               <li>
                 <a href="/projects">Projects</a>
               </li>
-                    <a href="/"><div class="mondreem-main-logo"></div></a>
+              <a href="/">
+              <img src="/img/svgs/mondreem-logo-black.svg" alt=""
+      />
+      </a>
               <li>
                 <a href="/residences">Residences</a>
               </li>
@@ -130,17 +133,20 @@
     </div>
 
     <!-- Main menu -->
-    <header class="uni-header">
-      <div class="uni-menu-wrapper">
-        <ul class="uni-menu">
-              <li></li>
+    <header class="proj-header">
+      <div class="proj-menu-wrapper">
+        <ul class="proj-menu">
+          <li>
+          </li>
           <li>
             <a href="/services">Services</a>
           </li>
           <li>
             <a href="/projects">Projects</a>
           </li>
-         <a href="/"><div class="mondreem-main-logo"></div></a>
+      <a href="/" class="proj-main-logo"
+        ><img src="/img/svgs/mondreem-logo-white.svg" alt=""
+      /></a>
           <li>
             <a href="/residences">Residences</a>
           </li>
@@ -150,221 +156,73 @@
                 <li></li>
         </ul>
       </div>
+      <a href="/projects" class="proj-go-back"><span><img src="/img/pages/projects/arrow-left.png" /></span>Projects</a>
     </header>
 
     
-<main class="projects-main">
-  <h2 class="projects-header-text">Selected projects</h2>
-  <div class="projects-dropdown">
-    <select name="projects" id="project-selector">
-      <option value="all">View All</option>
-      <option value="residential">Residential</option>
-      <option value="commercial">Commercial</option>
-    </select>
+<!-- Page content -->
+<section class="sub-projects-main">
+  <div class="sub-projects-title">
+    <h5>Residence</h5>
+    <h4>Atlantic Penthouse</h4>
   </div>
-  <div class="projects-buttons">
+  <div class="sub-projects-hero"></div>
+  <div class="sub-projects-one">
+    <img src="/img/pages/projects/sub/sp-atlantic-2.jpg" alt="" />
     <div>
-      <button id="button-residential">Residential</button>
-      <img src="/img/pages/projects/arrow_down.png" class="projects-arrow hidden-arrow"/>
-    </div>
-    <div>
-      <button id="button-commercial">Commercial</button>
-      <img src="/img/pages/projects/arrow_down.png" class="projects-arrow hidden-arrow"/>
-    </div>
-    <div>
-      <button id="button-all" class="projects-selected">View All</button>
-      <img src="/img/pages/projects/arrow_down.png" class="projects-arrow shown-arrow"/>
-    </div>
-  </div>
-  <div class="projects-content residential">
-    <div class="projects-grid-3">
-      <a href="/select/atlantic/">
-        <img src="/img/pages/projects/projects-atlantic-1.jpg" class="grid-first-child"/>
-        <img src="/img/pages/projects/projects-atlantic-2.jpg"/>
-        <img src="/img/pages/projects/projects-atlantic-3.jpg"/>
-      </a>
-    </div>
-    <div class="projects-flexbox">
-      <h5>ATLANTIC PENTHOUSE</h5>
-      <p>PRIVATE RESIDENCE</p>
-    </div>
-  </div>
-  <div class="projects-content commercial">
-    <div class="projects-grid-3">
-      <a href="#">
-        <img src="/img/pages/projects/projects-ame-1.jpg" class="grid-first-child"/>
-        <img src="/img/pages/projects/projects-ame-2.jpg"/>
-        <img src="/img/pages/projects/projects-ame-3.jpg"/>
-      </a>
-    </div>
-    <div class="projects-flexbox">
-      <h5>Ame concept store</h5>
-      <p>Commercial store</p>
-    </div>
-  </div>
-  <div class="projects-content residential">
-    <div class="projects-grid-3">
-      <a href="#">
-        <img src="/img/pages/projects/projects-meru-1.jpg" class="grid-first-child"/>
-        <img src="/img/pages/projects/projects-meru-2.jpg"/>
-        <img src="/img/pages/projects/projects-meru-3.jpg"/>
-      </a>
-    </div>
-    <div class="projects-flexbox">
-      <h5>MERU PENTHOUSE</h5>
-      <p>PRIVATE RESIDENCE</p>
-    </div>
-  </div>
-  <div class="projects-content commercial">
-    <div class="projects-grid-3">
-      <a href="#">
-        <img src="/img/pages/projects/projects-olympic-1.jpg" class="grid-first-child"/>
-        <img src="/img/pages/projects/projects-olympic-2.jpg"/>
-        <img src="/img/pages/projects/projects-olympic-3.jpg"/>
-      </a>
-    </div>
-    <div class="projects-flexbox">
-      <h5>OLYMPIC NINE OFFICE</h5>
-      <p>PRIVATE OFFICE</p>
-    </div>
-  </div>
-  <div class="projects-content commercial">
-    <div class="projects-grid-3">
-      <a href="#">
-        <img src="/img/pages/projects/projects-isaia-1.jpg" class="grid-first-child"/>
-        <img src="/img/pages/projects/projects-isaia-2.jpg"/>
-        <img src="/img/pages/projects/projects-isaia-3.jpg"/>
-      </a>
-    </div>
-    <div class="projects-flexbox">
-      <h5>ISAIA STORE</h5>
-      <p>COMMERCIAL STORE</p>
-    </div>
-  </div>
-  <div class="projects-content residential">
-    <div class="projects-grid-3">
-      <a href="#">
-        <img src="/img/pages/projects/projects-buenavista-1.jpg" class="grid-first-child"/>
-        <img src="/img/pages/projects/projects-buenavista-2.jpg"/>
-        <img src="/img/pages/projects/projects-buenavista-3.jpg"/>
-      </a>
-    </div>
-    <div class="projects-flexbox">
-      <h5>BUENA VISTA VILLA</h5>
-      <p>PRIVATE RESIDENCE</p>
-    </div>
-  </div>
-  <div class="projects-content residential">
-    <div class="projects-grid-3">
-      <a href="#">
-        <img src="/img/pages/projects/projects-magnolia-1.jpg" class="grid-first-child"/>
-        <img src="/img/pages/projects/projects-magnolia-2.jpg"/>
-        <img src="/img/pages/projects/projects-magnolia-3.jpg"/>
-      </a>
-    </div>
-    <div class="projects-flexbox">
-      <h5>MAGNOLIA RESIDENCE</h5>
-      <p>PRIVATE RESIDENCE</p>
-    </div>
-  </div>
-  <div class="projects-content residential">
-    <div class="projects-grid-3">
-      <a href="#">
-        <img src="/img/pages/projects/projects-addis-1.jpg" class="grid-first-child"/>
-        <img src="/img/pages/projects/projects-addis-2.jpg"/>
-        <img src="/img/pages/projects/projects-addis-3.jpg"/>
-      </a>
-    </div>
-    <div class="projects-flexbox">
-      <h5>ADDIS VIEW VILLA</h5>
-      <p>PRIVATE RESIDENCE</p>
-    </div>
-  </div>
-  <div class="projects-content residential">
-    <div class="projects-grid-3">
-      <a href="#">
-        <img src="/img/pages/projects/projects-sahara-1.jpg" class="grid-first-child"/>
-        <img src="/img/pages/projects/projects-sahara-2.jpg"/>
-        <img src="/img/pages/projects/projects-sahara-3.jpg"/>
-      </a>
-    </div>
-    <div class="projects-flexbox">
-      <h5>SAHARA PENTHOUSE</h5>
-      <p>PRIVATE RESIDENCE</p>
-    </div>
-  </div>
-  <div class="projects-content residential">
-    <div class="projects-grid-3">
-      <a href="#">
-        <img src="/img/pages/projects/projects-khuush-1.jpg" class="grid-first-child"/>
-        <img src="/img/pages/projects/projects-khuush-2.jpg"/>
-        <img src="/img/pages/projects/projects-khuush-3.jpg"/>
-      </a>
-    </div>
-    <div class="projects-flexbox">
-      <h5>KHUUSH VALLEY RESIDENCE</h5>
-      <p>PRIVATE RESIDENCE</p>
-    </div>
-  </div>
-  <div class="projects-content residential">
-    <div class="projects-grid-3">
-      <a href="#">
-        <img src="/img/pages/projects/projects-time-1.jpg" class="grid-first-child"/>
-        <img src="/img/pages/projects/projects-time-2.jpg"/>
-        <img src="/img/pages/projects/projects-time-3.jpg"/>
-      </a>
-    </div>
-    <div class="projects-flexbox">
-      <h5>TIME RESIDENCE</h5>
-      <p>PRIVATE RESIDENCE</p>
-    </div>
-  </div>
-  <div class="projects-content commercial">
-    <div class="projects-grid-1">
-      <a href="#"><img src="/img/pages/projects/projects-parktwin.jpg"/></a>
-    </div>
-    <div class="projects-flexbox">
-      <h5>PARK TWIN TOWER</h5>
-      <p>COMMERCIAL BUILDING</p>
-    </div>
-  </div>
-  <div class="projects-content commercial">
-    <div class="projects-grid-1">
-      <a href="#"><img src="/img/pages/projects/projects-mandala.jpg"/></a>
-    </div>
-    <div class="projects-flexbox">
-      <h5>MANDALA TOWER</h5>
-      <p>COMMERCIAL BUILDING</p>
-    </div>
-  </div>
-  <div class="projects-content commercial">
-    <div class="projects-grid-3">
-      <a href="#">
-        <img src="/img/pages/projects/projects-rolex-1.jpg" class="grid-first-child"/>
-        <img src="/img/pages/projects/projects-rolex-2.jpg"/>
-        <img src="/img/pages/projects/projects-rolex-3.jpg"/>
-      </a>
-    </div>
-    <div class="projects-flexbox">
-      <h5>ROLEX STORE</h5>
-      <p>COMMERCIAL STORE</p>
-    </div>
-  </div>
- 
-
-  
-
-  </div>
-</main>
-
-
-    <div class="end-note ">
-      <h5>Let's work together</h5>
+      <h3>About this project</h3>
       <p>
-        If you would like to discuss a future interior design project, or learn
-        more about Mondreem, please contact us.
+        We are driven by the passion for design excellence with the ultimate
+        goal of creating elegant, stylish interiors for our clients that capture
+        their personality and their aspirations. We offer a full interior
+        architecture and interior design service which covers all the stages of
+        the process, from concept and design development, construction
+        documentation, to the latest stages of furnishing and dressing.
       </p>
-      <a href="/contact" class="btn end-btn" id="modal-btn">Get in touch</a>
+    </div>
+  </div>
+  <div class="sub-projects-two">
+    <img src="/img/pages/projects/sub/sp-atlantic-3.jpg" alt="" />
+    <div>
+      <h3>About this project</h3>
+      <p>
+        We are driven by the passion for design excellence with the ultimate
+        goal of creating elegant, stylish interiors for our clients that capture
+        their personality and their aspirations. We offer a full interior
+        architecture and interior design service which covers all the stages of
+        the process, from concept and design development, construction
+        documentation, to the latest stages of furnishing and dressing. <br />
+        <br />
+
+        Attention to detail, excellent service and professional integrity are at
+        the core of our practice. Each of our projects is a journey undertaken
+        together with our clients, where we understand about their lifestyle and
+        preferences to make their dreams become reality.
+      </p>
+    </div>
+  </div>
+  <div class="sub-project-three sub-project-slider">
+    <img src="/img/pages/projects/sub/sp-atlantic-4.jpg" alt="" />
+    <img src="/img/pages/projects/sub/sp-atlantic-5.jpg" alt="" />
+    <img src="/img/pages/projects/sub/sp-atlantic-6.jpg" alt="" />
+  </div>
+  <div class="sub-project-four">
+    <img src="/img/pages/projects/sub/sp-atlantic-7.jpg" alt="" />
+    <img src="/img/pages/projects/sub/sp-atlantic-8.jpg" alt="" />
+    <img src="/img/pages/projects/sub/sp-atlantic-9.jpg" alt="" />
+  </div>
+</section>
+
+
+    <div class="proj-end-main">
+      <div class="proj-end-note ">
+        <h5>Let's work together</h5>
+        <p>
+          If you would like to discuss a future interior design project, or learn
+          more about Mondreem, please contact us.
+        </p>
+        <a href="/contact" class="btn end-btn" id="modal-btn">Get in touch</a>
+      </div>
     </div>
   </section>
 
@@ -478,6 +336,6 @@
         </div>
       </div>
     </footer>
-    <script src="/js/modal.js"></script><script src="/js/projects.js"></script>
+    <script src="/js/modal.js"></script><script src="/js/tiny-slider.js"></script><script src="/js/subproject_slider.js"></script></script>
   </body>
 </html>
