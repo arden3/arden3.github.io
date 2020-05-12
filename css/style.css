@@ -1179,35 +1179,35 @@ h5 {
   .footer-social {
     margin: 0 auto;
     position: relative;
-    width: 500px;
+    width: 300px;
   }
 
   .footer-social .grey-logo {
-    width: 30px;
+    width: 20px;
     margin-left: 0;
   }
 
   .footer-social .color-logo {
-    width: 30px;
+    width: 20px;
     margin-left: 0;
   }
 
   .footer-social .fb-logo {
-    top: -75px;
+    top: -40px;
   }
 
   .footer-social .tw-logo {
-    top: -75px;
+    top: -40px;
   }
 
   .footer-social .ig-logo {
-    top: -75px;
+    top: -40px;
   }
   .footer-social .be-logo {
-    top: -75px;
+    top: -40px;
   }
   .footer-social .pi-logo {
-    top: -75px;
+    top: -40px;
   }
 
   .footer-links > a {
@@ -1224,30 +1224,12 @@ h5 {
 }
 
 @media only screen and (max-width: 767px) {
-  .footer-links > a {
-    font-weight: 200;
-    font-size: 10px;
-    padding-right: 5px;
-  }
-
-  .footer-text {
-    font-weight: 200;
-    font-size: 8px;
-    padding-top: 25px;
-  }
-
-  .footer-social {
-    margin: 0 auto;
-    position: relative;
-    width: 300px;
-  }
-
   .footer-social .grey-logo {
-    width: 24px;
+    width: 16px;
   }
 
   .footer-social .color-logo {
-    width: 24px;
+    width: 16px;
   }
 }
 

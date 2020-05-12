@@ -68,7 +68,7 @@
 }
 .proj-menu-wrapper {
   position: absolute;
-  top: 5%;
+  top: 30px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -90,6 +90,15 @@
   font-size: 10px;
   font-weight: 200;
   text-transform: uppercase;
+}
+
+.proj-mondreem-main-logo {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 40px;
+  padding-right: 10px;
+  background: center center/contain no-repeat
+    url("/img/svgs/mondreem-logo-white.svg");
 }
 
 .proj-menu > a > img {
@@ -116,22 +125,11 @@
 }
 
 @media only screen and (max-width: 1199px) {
-  .proj-go-back {
-    left: 3%;
-  }
-
-  .proj-go-back > span > img {
-    width: 15px;
-    margin-right: 10px;
-  }
-}
-
-@media only screen and (max-width: 999px) {
-  .proj-menu > li {
+  .proj-mondreem-main-logo {
     display: none;
   }
 
-  .proj-menu > a > img {
+  .proj-menu > li {
     display: none;
   }
 
@@ -143,6 +141,12 @@
   .proj-go-back > span > img {
     width: 15px;
     margin-right: 10px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .proj-go-back {
+    top: 30px;
   }
 }
 
@@ -320,74 +324,208 @@
 /* ********************************************
 -------------------ATELIER--------------------
 ******************************************** */
+.atelier-main > .uni-header > .uni-menu-wrapper > .uni-menu > li > a {
+  color: #fff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.atelier-main > .uni-header > .uni-menu-wrapper > .uni-menu > a > div {
+  background: center center/contain no-repeat
+    url("/img/svgs/mondreem-logo-white.svg");
+}
+
 .atelier-note {
   display: none;
 }
 
-.atelier-wrapper {
-  height: calc(100vh - 260px);
-  /* margin-bottom: -260px; */
+.atelier-main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
 }
 
-.atelier-main {
+.atelier-main > .atelier-hero-video {
   position: absolute;
   top: 0;
-  left: 0;
-  /* opacity: 0.4; */
   z-index: -1;
-  width: 100%;
-  height: 100%;
-  background: no-repeat center center/cover url("/img/atelier-hero.jpg");
-  text-align: center;
+}
+
+.atelier-main > .atelier-hero-video > video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
 }
 
 .atelier-main > h2 {
   position: absolute;
-  font-size: 20px;
   letter-spacing: 4px;
-  top: 30%;
+  top: 35%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  font-weight: 200;
+  font-size: 32px;
+  line-height: 36px;
+  color: #ffffff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.atelier-main > h3 {
+.atelier-main > p {
   position: absolute;
-  font-size: 18px;
-  letter-spacing: 7px;
-  bottom: 20%;
+  width: 40%;
+  top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  line-height: 22px;
+  color: #ffffff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-@media only screen and (max-width: 999px) {
-  .atelier-main > h2 {
-    width: 100%;
-    font-size: 16px;
-    top: 20%;
+.atelier-content {
+  width: 64%;
+  margin: 160px auto 200px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.atelier-content > div {
+  width: 75%;
+  height: 75%;
+  margin: auto auto;
+}
+
+.atelier-content > div > h5 {
+  padding-bottom: 30px;
+  padding-top: 0;
+}
+
+.atelier-content > div > p {
+  text-align: justify;
+}
+
+.atelier-content > .atelier-p1 {
+  order: -1;
+}
+
+.atelier-content > .atelier-i3 {
+  order: 6;
+}
+
+.atelier-lower {
+  position: relative;
+  height: 576px;
+  width: 100%;
+  background: no-repeat center center/cover url("/img/pages/atelier-5.jpg");
+}
+
+.atelier-lower > h1 {
+  position: absolute;
+  top: 30%;
+  left: 55%;
+}
+
+.atelier-lower > p {
+  position: absolute;
+  text-transform: uppercase;
+  top: 60%;
+  left: 55%;
+  font-family: Blair;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 12px;
+  letter-spacing: 0.42em;
+  color: #000;
+}
+
+@media only screen and (max-width: 1199px) {
+  .atelier-main > .uni-header > .uni-menu-wrapper > .uni-menu > a > div {
+    background: center center/contain no-repeat
+      url("/img/svgs/mondreem-logo-icon-white.svg");
   }
 
-  .atelier-main > h3 {
-    width: 100%;
+  .atelier-main > h2 {
+    font-size: 26px;
+  }
+
+  .atelier-main > p {
+    width: 60%;
+  }
+
+  .atelier-content {
+    width: 80%;
+    margin: 100px auto 120px;
+  }
+
+  .atelier-content > div {
+    width: 80%;
+    height: 80%;
+  }
+
+  .atelier-content > div > h5 {
+    padding-bottom: 15px;
+  }
+
+  .atelier-lower > h1 {
+    top: 30%;
+    left: 55%;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 50px;
+  }
+
+  .atelier-lower > p {
     font-size: 14px;
   }
 }
 
 @media only screen and (max-width: 767px) {
-  .atelier-wrapper {
-    height: calc(100vh - 318px);
-    /* margin-bottom: -260px; */
+  .atelier-main > p {
+    width: 75%;
   }
 
-  .atelier-main > h2 {
-    font-size: 12px;
+  .atelier-content {
+    width: 80%;
+    margin: 120px auto 120px;
+    display: block;
+  }
+
+  .atelier-content > div {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 60px;
+  }
+
+  .atelier-content > div > h5 {
+    padding-bottom: 15px;
+    padding-top: 0;
+  }
+
+  .atelier-lower {
+    height: 740px;
+    background: no-repeat center center/cover
+      url("/img/pages/atelier-small.jpg");
+  }
+
+  .atelier-lower > h1 {
     top: 25%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
   }
 
-  .atelier-main > h3 {
-    font-size: 12px;
-    bottom: 24%;
+  .atelier-lower > p {
+    width: 100%;
+    text-align: center;
+    top: 80%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 14px;
   }
 }
 
@@ -1030,23 +1168,46 @@
 
 /* Services > Development 
 ******************************************** */
-.development-header > h2 {
-  letter-spacing: 4px;
-  margin: 80px auto 100px;
-  text-align: center;
-  font-size: 20px;
+.development-wrapper > .uni-header > .uni-menu-wrapper > .uni-menu > li > a {
+  color: #fff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.development-header > .development-hero {
+.development-wrapper > .uni-header > .uni-menu-wrapper > .uni-menu > a > div {
+  background: center center/contain no-repeat
+    url("/img/svgs/mondreem-logo-white.svg");
+}
+
+.development-wrapper {
+  position: relative;
   width: 100%;
-  height: 650px;
-  margin-bottom: 120px;
+  height: 100vh;
+}
+
+.development-hero-image {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
   background: no-repeat center center/cover url("/img/development-hero.jpg");
+  z-index: -1;
+}
+
+.development-hero-text {
+  position: absolute;
+  letter-spacing: 4px;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
 }
 
 .development-content-1 {
   width: 70%;
-  margin: 0 auto;
+  margin: 120px auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 72px;
@@ -1099,6 +1260,11 @@
 }
 
 @media only screen and (max-width: 1199px) {
+  .development-wrapper > .uni-header > .uni-menu-wrapper > .uni-menu > a > div {
+    background: center center/contain no-repeat
+      url("/img/svgs/mondreem-logo-icon-white.svg");
+  }
+
   .development-header > h2 {
     margin: 20px auto 80px;
     font-size: 16px;
@@ -1221,32 +1387,38 @@
 
 /* Services > Interior
 ******************************************** */
-.interior-hero {
+.interior-hero-image {
+  position: absolute;
+  top: 0;
+  height: 100vh;
   width: 100%;
-  height: 650px;
-  margin-bottom: 120px;
   background: no-repeat center center/cover url("/img/interior-hero.jpg");
+  z-index: -1;
 }
 
 /* Services > Architecture
 ******************************************** */
-.development-header > .architecture-hero {
+.architecture-hero-image {
+  position: absolute;
+  top: 0;
+  height: 100vh;
   width: 100%;
-  height: 650px;
-  margin-bottom: 120px;
   background: no-repeat center center/cover url("/img/architecture-hero.jpg");
+  z-index: -1;
 }
 
 /* Services > Specialty 
 ******************************************** */
-.specialty-hero {
+.specialty-hero-image {
+  position: absolute;
+  top: 0;
+  height: 100vh;
   width: 100%;
-  height: 650px;
-  margin-bottom: 120px;
   background: no-repeat center center/cover url("/img/specialty-hero.jpg");
+  z-index: -1;
 }
 
-@media only screen and (max-width: 767px) {
+/* @media only screen and (max-width: 767px) {
   .development-content-3 > .dc8 {
     order: 8;
   }
@@ -1258,7 +1430,7 @@
   .development-content-3 > .dc10 {
     order: 10;
   }
-}
+} */
 
 /* ********************************************
 -------------------PROJECTS--------------------
@@ -1307,13 +1479,13 @@
   margin-bottom: 5%;
 }
 
-.projects-content > div > h5 {
+.projects-content > div > a > h5 {
   font-size: 12px;
   padding-top: 24px;
   font-weight: 200;
 }
 
-.projects-content > div > p {
+.projects-content > div > a > p {
   font-family: blair;
   font-size: 10px;
   font-weight: 500;
@@ -1327,7 +1499,7 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
-.projects-flexbox {
+.projects-flexbox > a {
   display: flex;
   justify-content: space-between;
 }
@@ -1363,13 +1535,13 @@
     margin-bottom: 80px;
   }
 
-  .projects-content > div > h5 {
+  .projects-content > div > a > h5 {
     font-size: 10px;
     padding-top: 10px;
     font-weight: 300;
   }
 
-  .projects-content > div > p {
+  .projects-content > div > a > p {
     font-size: 8px;
     padding-top: 10px;
   }
@@ -1409,14 +1581,14 @@
     outline: none;
   }
 
-  .projects-content > div > h5 {
+  .projects-content > div > a > h5 {
     padding-top: 6px;
     font-weight: 300;
     padding-bottom: 20px;
     order: 5;
   }
 
-  .projects-content > div > p {
+  .projects-content > div > a > p {
     font-size: 8px;
     padding-top: 12px;
   }
@@ -1433,7 +1605,7 @@
     display: block;
   }
 
-  .projects-flexbox {
+  .projects-flexbox > a {
     flex-direction: column;
     justify-content: space-between;
   }
@@ -1469,10 +1641,14 @@
 
 .sub-projects-hero {
   margin-top: 100px;
-  background: center center/cover
-    url("/img/pages/projects/sub/sp-atlantic-1.jpg");
   width: 100%;
   height: 960px;
+}
+
+.sub-projects-hero > .sub-projects-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .sub-projects-one {
@@ -1502,7 +1678,7 @@
   margin: 200px auto 0;
 }
 
-.sub-projects-two > div {
+/* .sub-projects-two > div {
   width: 40%;
   margin: 150px auto 0;
   text-align: center;
@@ -1520,7 +1696,7 @@
   padding-top: 50px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   text-align: justify;
-}
+} */
 
 .sub-project-three {
   padding-top: 150px;
@@ -1532,7 +1708,7 @@
 }
 
 .sub-project-four {
-  padding-top: 100px;
+  padding-top: 10px;
   width: 70%;
   margin: 0 auto;
 }
@@ -1602,7 +1778,7 @@
 @media only screen and (max-width: 767px) {
   .sub-projects-title > h5 {
     padding-top: 40px;
-    padding-bottom: 0;
+    padding-bottom: 10px;
     margin-bottom: 0;
   }
 
@@ -1801,8 +1977,8 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 50px;
-  width: 100%;
+  height: 50px !important;
+  width: 100% !important;
   font-size: 10px;
 }
 
