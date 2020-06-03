@@ -156,7 +156,7 @@
 .about-content {
   width: 60%;
   margin: 0 auto;
-  padding-top: 170px;
+  padding-top: 100px;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   grid-gap: 54px;
@@ -349,11 +349,12 @@
   position: absolute;
   top: 0;
   z-index: -1;
+  width: 100%;
 }
 
 .atelier-main > .atelier-hero-video > video {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -535,7 +536,7 @@
 .careers-content-1 {
   width: 65%;
   margin: 0 auto;
-  padding-top: 170px;
+  padding-top: 100px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 100px;
@@ -545,6 +546,11 @@
 
 .careers-content-1-image {
   order: 2;
+}
+
+.careers-text > h5 {
+  font-size: 20px;
+  padding-top: 0;
 }
 
 .careers-text > ul {
@@ -560,8 +566,9 @@
 .careers-content-2,
 .careers-content-3 {
   width: 60%;
-  margin: 0 auto;
-  padding-bottom: 100px;
+  margin: auto;
+  padding-bottom: 40px;
+  margin-bottom: 60px;
   display: grid;
   grid-template-columns: 2fr 3fr;
   grid-gap: 50px;
@@ -587,7 +594,12 @@
   display: inline-block;
   margin-left: 20px;
   position: absolute;
-  bottom: 15%;
+  bottom: -4px;
+  transform: translateY(-50%);
+}
+
+.careers-content-2:hover {
+  background-color: #e5e5e5;
 }
 
 @media only screen and (max-width: 1199px) {
@@ -694,8 +706,13 @@
   width: 50%;
   margin: 0 auto;
   padding-bottom: 120px;
-  margin-top: 120px;
+  /* margin-top: 120px; */
   text-align: center;
+}
+
+.gallery-text > h5 {
+  padding-top: 100px;
+  font-size: 20px;
 }
 
 .gallery-content {
@@ -745,9 +762,13 @@
   margin: 0 auto;
 }
 
+.contact-upper > h5 {
+  font-size: 20px;
+}
+
 .contact-upper {
   width: 50%;
-  margin: 180px auto 0;
+  margin: 100px auto 0;
   text-align: center;
 }
 
@@ -857,17 +878,18 @@
 --------------------LEGAL----------------------
 ******************************************** */
 .legal-main {
-  width: 70%;
+  width: 62%;
   margin: 0 auto;
 }
 
 .legal-main > h5 {
   margin-top: 100px;
-  font-size: 16px;
+  font-size: 20px;
+  padding-top: 0;
 }
 
 .legal-content {
-  margin-top: 80px;
+  margin-top: 50px;
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-gap: 0;
@@ -875,9 +897,11 @@
 }
 
 .legal-content > h4 {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 300;
-  line-height: 28px;
+  line-height: 18px;
+  letter-spacing: 0;
+  padding-right: 20px;
 }
 
 .legal-content > p {
@@ -921,6 +945,17 @@
   height: 100vh;
   width: 100%;
   background: no-repeat center center/cover url("/img/pages/residence-1.jpg");
+  z-index: -2;
+}
+
+.residences-hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: #333;
+  mix-blend-mode: overlay;
   z-index: -1;
 }
 
@@ -1132,6 +1167,7 @@
   color: rgba(0, 0, 0, 0.5);
   font-weight: 200;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .services-links > div:hover {
@@ -1147,7 +1183,7 @@
 
 .services-links > div > p {
   height: 42px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 200;
 }
 
@@ -1540,9 +1576,58 @@
   color: rgba(0, 0, 0, 0.3);
 }
 
+.projects-grid-1,
+.projects-grid-3 {
+  position: relative;
+}
+
 .projects-grid-3 > a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+}
+
+.projects-grid-1:first-child:hover .projects-overlay {
+  /* filter: brightness(50%) sepia(50%);
+  z-index: 1; */
+  display: block;
+  z-index: 1;
+}
+
+.projects-grid-3:first-child:hover .projects-overlay {
+  /* filter: brightness(50%) sepia(50%);
+  z-index: 1; */
+  display: block;
+  z-index: 1;
+}
+
+.projects-overlay {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: #cba58b;
+  mix-blend-mode: hard-light;
+  filter: brightness(50%);
+  z-index: -1;
+  transition: all 0.1s ease-out;
+}
+
+.projects-grid-1:first-child:hover .projects-hidden {
+  display: block;
+  color: #fff;
+  font-size: 10px;
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.979);
+  z-index: 10;
+}
+
+.projects-grid-3:first-child:hover .projects-hidden {
+  display: block;
+  color: #fff;
+  font-size: 10px;
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.979);
+  z-index: 10;
 }
 
 .projects-flexbox > a {
@@ -1583,6 +1668,20 @@
 
 .filtered-out {
   display: none;
+}
+
+.projects-hidden {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-transform: uppercase;
+  font-family: Blair;
+  font-weight: 200;
+  font-size: 10px;
+  color: #fff;
+  transform: translateX(-50%);
+  transform: translateY(-50%);
 }
 
 @media only screen and (max-width: 1199px) {
@@ -1934,6 +2033,48 @@
   }
 }
 
+/* ********************************************
+--------------------JOBS-----------------------
+******************************************** */
+.jobs-main {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.jobs-main > div > h3 {
+  font-size: 18px;
+  line-height: 24px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.jobs-main > div > a {
+  font-family: Blair;
+  font-size: 8px;
+  text-transform: uppercase;
+  color: #666;
+  font-weight: 200;
+}
+
+.jobs-main > div > a:hover {
+  color: #000;
+}
+
+.jobs-main > ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.jobs-main > ul > li {
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
+
+.jobs-main > ul > li > ul {
+  list-style: circle;
+  padding-left: 20px;
+  padding-top: 10px;
+}
 /* ********************************************
 -----------------COMMON ELEMENTS---------------
 ******************************************** */
