@@ -1,0 +1,3 @@
+[submodule "libbar"]
+	path = arden3/arden3.github.io
+	url = https://github.com/arden3/mondreem.git
