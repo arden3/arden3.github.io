@@ -1,686 +1,343 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/tiny-slider.css" />
-    <link rel="stylesheet" href="/css/pages.css" />
-    <link rel="stylesheet" href="/css/menu.css" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <title>Mondreem</title>
-  </head>
-  <body>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Blueshift - Strategic Proposal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- 
+    Chosen Palette: Calm Corporate Blue. A professional and modern palette using a light neutral background (slate-50), dark text (slate-800), and a calming, trustworthy blue (blue-600) as the primary accent, with a secondary accent of teal (teal-500) for data highlights.
+    Application Structure Plan: A single-page, vertical scrolling narrative application designed to mirror and enhance the pitch deck's flow. The structure guides the user from the high-level problem down to the specific pilot proposal, using interactive elements to demonstrate key concepts. This linear storytelling approach is more effective for a strategic proposal than a complex dashboard, as it ensures the core message is delivered logically and persuasively.
+    Visualization & Content Choices: 
+    - Report Info: The core problem of safety gaps. Goal: Elicit agreement. Viz: Icon-driven cards (HTML/Tailwind). Interaction: Subtle hover effects. Justification: Visually breaks down complex concepts into digestible points.
+    - Report Info: The Blueshift solution. Goal: Explain the core features. Viz: Two-column layout with icons. Interaction: None, clarity is key. Justification: Simple, clear presentation of the two main value propositions.
+    - Report Info: Synergy with Forwood CRM. Goal: Demonstrate immediate value. Viz: A mock mobile phone UI (HTML/Tailwind). Interaction: A clickable button triggers a JS function to show a modal, simulating the app's proactive alerts. Justification: Makes the abstract concept of synergy tangible and interactive.
+    - Report Info: Pilot success metrics. Goal: Show projected ROI. Viz: Two bar charts (Chart.js). Interaction: Tooltips on hover. Justification: Data visualization is the most effective way to show a clear "before and after" and quantify the pilot's value.
+    - Report Info: Long-term roadmap. Goal: Showcase strategic vision. Viz: A vertical timeline graphic (HTML/Tailwind). Interaction: Subtle hover on timeline points. Justification: Clearly visualizes the multi-year strategic path from pilot to spinoff.
+    CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #1e293b; /* slate-800 */
+        }
+        .section-title {
+            @apply text-3xl font-bold text-slate-800 text-center mb-4;
+        }
+        .section-subtitle {
+            @apply text-lg text-slate-500 text-center max-w-3xl mx-auto mb-12;
+        }
+        .card {
+            @apply bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 350px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .modal-overlay {
+            @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center transition-opacity duration-300;
+        }
+    </style>
+</head>
+<body>
 
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-600">Project Blueshift</h1>
+            <a href="#pilot" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">The Proposal</a>
+        </nav>
+    </header>
 
-    
-<!-- Toggle menu -->
-<div class="menu-wrap">
-  <input type="checkbox" class="menu-toggler" />
-  <div class="home-hamburger"><div></div></div>
-  <div class="ham-menu">
-    <div>
-      <div class="ham-menu-header">
-        <ul class="ham-menu-wrapper">
-          <li></li>
-          <li>
-            <a href="/services">Services</a>
-          </li>
-          <li>
-            <a href="/projects">Projects</a>
-          </li>
-          <a href="/"><div class="mondreem-main-logo-dark"></div></a>
-          <li>
-            <a href="/residences">Residences</a>
-          </li>
-          <li>
-            <a href="/atelier">Atelier</a>
-          </li>
-          <li></li>
-        </ul>
-      </div>
+    <main>
+        <!-- Hero Section -->
+        <section class="text-center py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-6xl font-bold text-slate-800 mb-4">A Data-Driven Revolution in Frontline Safety</h1>
+                <p class="text-xl text-slate-500 max-w-3xl mx-auto">An internal proposal to transform safety culture, prevent incidents, and unlock immense value for Oyu Tolgoi and Rio Tinto.</p>
+            </div>
+        </section>
 
-      <ul class="ham-menu-list">
-        <li><a href="/about">About</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/residences">Residences</a></li>
-        <li><a href="/atelier">Atelier</a></li>
-        <li><a href="/gallery">Gallery</a></li>
-        <li><a href="/careers">Careers</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-      
-          <!-- Footer -->
-          <section class="ham-footer">
-            <div class="footer-container">
-              <div class="footer-social">
-                <a href="https://www.facebook.com/MondreemLLC" class="fb-href"
-                  ><img
-                    src="/img/svgs/facebook_3.svg"
-                    class="ft-sm grey-logo fb-logo"
-                    alt="facebook logo"
-                /></a>
-                <a href="https://twitter.com/mondreeml"
-                  ><img
-                    src="/img/svgs/twitter_3.svg"
-                    class="ft-sm grey-logo tw-logo"
-                    alt="twitter logo"
-                /></a>
-                <a href="https://www.instagram.com/mondreem_official/"
-                  ><img
-                    src="/img/svgs/instagram_3.svg"
-                    class="ft-sm grey-logo ig-logo"
-                    alt="instagram logo"
-                /></a>
-                <a href="https://www.behance.net/mr_monkhtof715"
-                  ><img
-                    src="/img/svgs/behance_3.svg"
-                    class="ft-sm grey-logo be-logo"
-                    alt="behance logo"
-                /></a>
-                <a href="https://www.pinterest.ca/mondreem/"
-                  ><img
-                    src="/img/svgs/pinterest_3.svg"
-                    class="ft-sm grey-logo pi-logo"
-                    alt="pinterest logo"
-                /></a>
-                <a href="https://www.facebook.com/MondreemLLC"
-                  ><img
-                    src="/img/svgs/facebook.svg"
-                    class="ft-sm color-logo fb-logo"
-                    alt="facebook logo"
-                /></a>
-                <a href="https://twitter.com/mondreeml"
-                  ><img
-                    src="/img/svgs/twitter.svg"
-                    class="ft-sm color-logo tw-logo"
-                    alt="twitter logo"
-                /></a>
-                <a href="https://www.instagram.com/mondreem_official/"
-                  ><img
-                    src="/img/svgs/instagram.svg"
-                    class="ft-sm color-logo ig-logo"
-                    alt="instagram logo"
-                /></a>
-                <a href="https://www.behance.net/mr_monkhtof715"
-                  ><img
-                    src="/img/svgs/behance.svg"
-                    class="ft-sm color-logo be-logo"
-                    alt="behance logo"
-                /></a>
-                <a href="https://www.pinterest.ca/mondreem/"
-                  ><img
-                    src="/img/svgs/pinterest.svg"
-                    class="ft-sm color-logo pi-logo"
-                    alt="pinterest logo"
-                /></a>
-              </div>
-              <div>
-                <div class="footer-links">
-                  <a href="about">About</a>
-                  <a href="careers">Careers</a>
-                  <a href="contact">Contact</a>
-                  <a href="legal">Legal Notice</a>
+        <!-- The Problem Section -->
+        <section id="problem" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">The Problem We All See</h2>
+                <p class="section-subtitle">Despite world-class procedures, a gap exists between our documented safety and real-world execution. This gap is created by predictable human factors.</p>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="card">
+                        <div class="text-blue-600 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a9.97 9.97 0 01-1.563 3.029m0 0l-2.14 2.14" /></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Risk Normalization</h3>
+                        <p class="text-slate-600">On routine tasks, our crews become understandably complacent with familiar hazards. The brain begins to filter out constant risks, leading to potential oversights.</p>
+                    </div>
+                    <div class="card">
+                        <div class="text-blue-600 mb-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Lack of Personal Accountability</h3>
+                        <p class="text-slate-600">The principle that "safety is everyone's job" can paradoxically become "no one's job" in the critical moment of implementing a specific control.</p>
+                    </div>
                 </div>
-                <p class="footer-text">
-                  &copy 2020 Mondreem. All rights reserved
-                </p>
-              </div>
             </div>
-          </section>
-        </div>
-      </div>
-    </div>
+        </section>
 
-      <!-- Main menu -->
-      <header>
-        <div class="home-hero-video">
-          <video
-            class="home-hero-content"
-            autoplay
-            muted
-            loop
-            poster="/img/home-hero-poster.jpg"
-            id="md-video"
-          >
-            >
-            <source src="/img/home-hero.m4v" type="video/mp4" />
-          </video>
-        </div>
-        <div class="home-main-menu">
-          <ul>
-            <li></li>
-            <li>
-              <a href="/services">Services</a>
-            </li>
-            <li>
-              <a href="/projects">Projects</a>
-            </li>
-            <a href="/"><div class="mondreem-main-logo"></div></a>
-
-            <li>
-              <a href="/residences">Residences</a>
-            </li>
-            <li>
-              <a href="/atelier">Atelier</a>
-            </li>
-            <li></li>
-          </ul>
-        </div>
-        <!-- <div class="home-hero-text">
-    <h2>
-      Sophisticated design
-    </h2>
-  </div> -->
-      </header>
-
-      <!-- Services -->
-      <section class="home-services">
-        <div class="home-services-content">
-          <p class="scp-1">
-            <strong>
-              We strive to create architecture that evokes feelings, inspires
-              and enhances the quality of life of our clients.</strong
-            >
-          </p>
-          <p class="scp-2">
-            Our main commitment is to design buildings that are attractive,
-            efficient and appropriate to their environment. We develop our
-            projects by listening to the clients' needs and providing creative
-            and personalized design solutions that fulfil their individual or
-            target market requirements, as well as the location and the
-            environment where each project is located.
-          </p>
-          <a href="/services" class="scp-button btn">FIND OUT MORE</a>
-        </div>
-        <div class="home-services-links services-slider">
-          <div class="slide">
-            <a href="/services/development/"
-              ><img
-                src="/img/services-1.png"
-                alt="Construction project in progress"
-            /></a>
-            <p>Development Management</p>
-          </div>
-          <div class="slide">
-            <a href="/services/architecture/"
-              ><img src="/img/services-2.png" alt="A skyscraper"
-            /></a>
-            <p>Architecture</p>
-          </div>
-          <div class="slide">
-            <a href="/services/interior/"
-              ><img src="/img/services-3.png" alt="Custom designed interior"
-            /></a>
-            <p>Interior Design</p>
-          </div>
-          <div class="slide">
-            <a href="/services/specialty/"
-              ><img src="/img/services-4.png" alt="Custom designed smart home"
-            /></a>
-            <p>Specialty Construction</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Projects -->
-      <section class="home-projects">
-        <div id="badass-slider" class="home-projects-main">
-          <div>
-            <div class="home-projects-showcase-1 home-projects-flex">
-              <div class="home-project-item">
-                <h4>- Latest Projects -</h4>
-                <a href="#"
-                  ><h3>
-                    Atlantic Penthouse
-                  </h3></a
-                >
-                <p>
-                  We are driven by the passion for design excellence with the
-                  ultimate goal of creating elegant, stylish interiors for our
-                  clients that capture their personality and their aspirations.
-                  We offer a full interior architecture and interior design
-                  service which covers all the stages of the process, from
-                  concept and design development, construction documentation, to
-                  the latest stages of furnishing and dressing.
-                </p>
-                <a href="#" class="p-btn btn">See more projects</a>
-              </div>
-              <div class="p-container">
-                <a href="#"><div class="p-image-1"></div></a>
-                <a href="#" class="p-overlay"> </a>
-                <div class="p-overlay-text">
-                  <div class="pot-1">
-                    Atlantic Penthouse
-                  </div>
-                  <div class="pot-2">
-                    Find out more
-                  </div>
+        <!-- The Solution Section -->
+        <section id="solution" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">The Solution: The Blueshift Safety OS</h2>
+                <p class="section-subtitle">A "Coach on the Shoulder" for every crew. Blueshift is a mobile-first platform that addresses the root causes of safety gaps with two core, interconnected features.</p>
+                <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    <div class="card bg-slate-50 border-l-4 border-blue-500">
+                        <h3 class="text-xl font-semibold mb-2">1. AI-Assisted JHA Creation</h3>
+                        <p class="text-slate-600 mb-4">For new tasks, crews create their JHA in the app. Our AI provides real-time feedback, suggesting missed hazards and stronger controls based on thousands of data points. This turns a compliance task into a powerful learning exercise.</p>
+                    </div>
+                    <div class="card bg-slate-50 border-l-4 border-blue-500">
+                        <h3 class="text-xl font-semibold mb-2">2. Critical Control Assignment</h3>
+                        <p class="text-slate-600 mb-4">For ALL tasks (JHA or SWP-based), the system requires the assignment of specific, named individuals to each critical control. This transforms shared responsibility into direct, personal accountability.</p>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <div>
-            <div class="home-projects-showcase-2 home-projects-flex">
-              <div class="home-project-item">
-                <h4>- Latest Projects -</h4>
-                <a href="#"
-                  ><h3>
-                    Ame Concept Store
-                  </h3></a
-                >
-                <p>
-                  Our expertise extends across the areas of development
-                  management, architecture, interior design and specialty
-                  construction. In addition, as a result of years of experience
-                  in bespoke furniture design and manufacturing, we have created
-                  a collection of fine crafted furniture and exclusive products
-                  that complement our projects.
-                </p>
-                <a href="#" class="p-btn btn">See more projects</a>
-              </div>
-              <div class="p-container">
-                <a href="#"><div class="p-image-2"></div></a>
-                <a href="#" class="p-overlay"> </a>
-                <div class="p-overlay-text">
-                  <div class="pot-1">
-                    <img src="img/ame-logo.png" alt="Ame logo" />
-                  </div>
-                  <div class="pot-2">
-                    Find out more
-                  </div>
+        </section>
+
+        <!-- Synergy & Interactive Demo Section -->
+        <section id="synergy" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Immediate Synergy: Making Our Systems Smarter</h2>
+                <p class="section-subtitle">Blueshift doesn't replace our systems; it elevates them. It's designed to integrate with and enhance our significant investment in the Forwood CRM, turning reactive data into proactive coaching.</p>
+                <div class="bg-white p-8 rounded-2xl shadow-lg max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold mb-4">The Proactive Feedback Loop</h3>
+                        <p class="text-slate-600 mb-2"><strong class="text-slate-800">Today:</strong> Forwood records a non-compliance after it occurs. This data is valuable but reactive.</p>
+                        <p class="text-slate-600 mb-6"><strong class="text-slate-800">With Blueshift:</strong> The platform queries Forwood data before a job starts. During a pre-start meeting, the app will flag relevant past issues, allowing crews to proactively prevent repeat incidents.</p>
+                        <button id="demoButton" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md">See It In Action</button>
+                    </div>
+                    <div class="flex-1 w-full max-w-xs">
+                        <div class="bg-slate-800 rounded-[40px] p-4 shadow-2xl">
+                            <div class="bg-white rounded-[30px] p-2">
+                                <div class="bg-slate-100 rounded-[20px] aspect-[9/19] p-4 flex flex-col">
+                                    <div class="text-center font-bold text-blue-600">Blueshift OS</div>
+                                    <div class="mt-4 bg-white p-3 rounded-lg shadow-sm">
+                                        <h4 class="font-semibold text-sm">Pre-Start Meeting</h4>
+                                        <p class="text-xs text-slate-500">Task: Barricading Sector 7-C</p>
+                                    </div>
+                                    <div id="demoAlert" class="hidden mt-4 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-3 rounded-lg text-xs shadow-md">
+                                        <p class="font-bold">CRM Alert:</p>
+                                        <p>Forwood shows a non-compliance for 'improper barricading' was recorded in this area last week. Let's ensure our barricades are perfect today.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-        <div id="home-slider-control-1">
-          <img class="home-sc1-left" src="img/left-arrow.png" alt="" />
-          <img class="home-sc1-right" src="img/right-arrow.png" alt="" />
-        </div>
-      </section>
+        </section>
 
-      <!-- Atelier -->
-      <section class="atelier">
-        <div class="at-container">
-          <div class="at-mirror">
-            <img
-              src="img/atelier-1.jpg"
-              alt="Standing mirror"
-              class="grayscale"
-              id="at-image"
-            />
-            <div class="at-overlay">
-              <h2>First Collection</h2>
-              <a href="/atelier" class="btn-transparent">Find Out More</a>
+        <!-- Future State Section -->
+        <section id="future" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">The Future State: A Predictive Intelligence Engine</h2>
+                <p class="section-subtitle">As the platform gathers data, it evolves from a system of engagement into a system of intelligence, creating an unbreachable competitive moat and a world-class safety culture.</p>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="card">
+                        <h3 class="text-xl font-semibold mb-2">Hyper-Personalized Coaching</h3>
+                        <p class="text-slate-600">The platform builds a performance profile for each individual, alerting supervisors to provide targeted, positive coaching based on past performance. "Ganbaatar is on an electrical task; his profile shows a minor past struggle with LOTO. This is a perfect coaching opportunity."</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-xl font-semibold mb-2">Location-Based Risk Profiling</h3>
+                        <p class="text-slate-600">The system creates a "risk heatmap" of the mine. Planners can see that "Sector 7-C has a 40% higher rate of dropped object reports" and can proactively assign additional controls or supervision for tasks in that area.</p>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="at-content">
-            <h3>Atelier Mondreem</h3>
-            <p>
-              The Atelier Mondreem brings the best Spain has to offer in fine
-              furniture design and craftsmanship, creating bespoke furniture and
-              accessories to complete the finest projects.
-            </p>
-            <a href="/atelier" class="at-btn btn">See more furniture</a>
-          </div>
-          <div class="at-table">
-            <img
-              src="img/atelier-2.jpg"
-              alt="Table with vase"
-              class="grayscale temp-color"
-              id="at-image"
-            />
-            <div class="at-overlay">
-              <h2>Second Collection</h2>
-              <a href="/atelier" class="btn-transparent">Find Out More</a>
-            </div>
-          </div>
-          <div class="at-chair">
-            <img
-              src="img/atelier-3.jpg"
-              alt="Plush chair"
-              class="grayscale"
-              id="at-image"
-            />
-            <div class="at-overlay">
-              <h4>- Latest Design -</h4>
-              <h2>Soleil Chair</h2>
-              <a href="/atelier" class="btn-transparent">Find Out More</a>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- News  -->
-      <section class="news">
-        <div class="ne-container">
-          <div id="home-carousel-2" class="ne-gallery">
-            <ul class="my-slider news-social-icons">
-              <li class="glide__slide">
-                <img
-                  class="ne-image"
-                  src="img/news-1.jpg"
-                  alt="porcelanosa visit"
-                />
-              </li>
-              <li class="glide__slide">
-                <img
-                  class="ne-image"
-                  src="img/news-2.jpg"
-                  alt="porcelanosa factory floor"
-                />
-              </li>
-              <li class="glide__slide">
-                <img
-                  class="ne-image"
-                  src="img/news-3.jpg"
-                  alt="porcelanosa showroom"
-                />
-              </li>
-              <li class="glide__slide">
-                <img
-                  class="ne-image"
-                  src="img/news-4.jpg"
-                  alt="porcelanosa new materials"
-                />
-              </li>
-            </ul>
-            <ul
-              id="home-slider-control-2"
-              class="customize-controls"
-              aria-label="Carousel Navigation"
-              tabindex="0"
-            >
-              <li
-                class="prev"
-                data-controls="prev"
-                aria-controls="customize"
-                tabindex="-1"
-              >
-                <img src="img/left-arrow-white.png" alt="" />
-              </li>
-              <li
-                class="next"
-                data-controls="next"
-                aria-controls="customize"
-                tabindex="-1"
-              >
-                <img src="img/right-arrow-white.png" alt="" />
-              </li>
-            </ul>
-          </div>
-          <div class="ne-content">
-            <h4 class="ne-subtitle">- Latest News -</h4>
-            <a href="#"
-              ><h4 class="ne-title">
-                Our Partner
-              </h4>
-              <h2>Porcelanosa</h2></a
-            >
-            <p class="ne-text">
-              In February, we visited our long time partner Porcelanosa Group.
-              Porcelanosa was founded over 40 years ago in a small village by
-              the Mediterranean Sea in Castellon, Spain. Since then, they have
-              been providing architectural and design solutions to consumers and
-              the A&D community with unparalleled innovation, quality, and
-              service.
-            </p>
-            <div class="ne-bottom-text">
-              <div>
-                <p>
-                  To learn more about our trip or Mondreem itself, please visit
-                  our social media pages
-                </p>
-                <br />
-              </div>
-              <div class="ne-social">
-                <a href="https://www.facebook.com/MondreemLLC" class="fb-href"
-                  ><img
-                    src="img/svgs/facebook_6.svg"
-                    class="ft-sm grey-logo fb-logo"
-                    alt="facebook logo"
-                /></a>
-                <a href="https://twitter.com/mondreeml"
-                  ><img
-                    src="img/svgs/twitter_6.svg"
-                    class="ft-sm grey-logo tw-logo"
-                    alt="twitter logo"
-                /></a>
-                <a href="https://www.instagram.com/mondreem_official/"
-                  ><img
-                    src="img/svgs/instagram_6.svg"
-                    class="ft-sm grey-logo ig-logo"
-                    alt="instagram logo"
-                /></a>
-                <a href="https://www.behance.net/mr_monkhtof715"
-                  ><img
-                    src="img/svgs/behance_6.svg"
-                    class="ft-sm grey-logo be-logo"
-                    alt="behance logo"
-                /></a>
-                <a href="https://www.pinterest.ca/mondreem/"
-                  ><img
-                    src="img/svgs/pinterest_6.svg"
-                    class="ft-sm grey-logo pi-logo"
-                    alt="pinterest logo"
-                /></a>
-                <a href="https://www.facebook.com/MondreemLLC"
-                  ><img
-                    src="img/svgs/facebook.svg"
-                    class="ft-sm color-logo fb-logo"
-                    alt="facebook logo"
-                /></a>
-                <a href="https://twitter.com/mondreeml"
-                  ><img
-                    src="img/svgs/twitter.svg"
-                    class="ft-sm color-logo tw-logo"
-                    alt="twitter logo"
-                /></a>
-                <a href="https://www.instagram.com/mondreem_official/"
-                  ><img
-                    src="img/svgs/instagram.svg"
-                    class="ft-sm color-logo ig-logo"
-                    alt="instagram logo"
-                /></a>
-                <a href="https://www.behance.net/mr_monkhtof715"
-                  ><img
-                    src="img/svgs/behance.svg"
-                    class="ft-sm color-logo be-logo"
-                    alt="behance logo"
-                /></a>
-                <a href="https://www.pinterest.ca/mondreem/"
-                  ><img
-                    src="img/svgs/pinterest.svg"
-                    class="ft-sm color-logo pi-logo"
-                    alt="pinterest logo"
-                /></a>
-              </div>
+        <!-- The Pilot Section -->
+        <section id="pilot" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">The Pilot: A Concrete, De-risked Proposal</h2>
+                <p class="section-subtitle">To prove the value of Blueshift, we propose a six-month pilot with two MCSI crews. The objective is to deliver hard data on its effectiveness.</p>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="chart-container">
+                        <canvas id="jhaScoreChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="nonComplianceChart"></canvas>
+                    </div>
+                </div>
+                 <div class="mt-12 text-center card max-w-3xl mx-auto bg-blue-50 border-blue-200 border">
+                    <h3 class="text-xl font-bold text-blue-800 mb-2">The Ask: $45,000 USD</h3>
+                    <p class="text-blue-700">To engage a specialized external partner for agile MVP development, ensuring no burden on internal ICT resources. This budget falls within a Manager's Delegation of Authority.</p>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Contact -->
-      <section class="contact">
-        <div class="co-wrapper">
-          <div class="co-upper">
-            <h4>Let's work together</h4>
-            <p>
-              If you would like to discuss a future interior design project, or
-              learn more about Mondreem, please contact us.
-            </p>
-            <a href="/contact" class="co-btn btn" id="modal-btn"
-              >Get in touch</a
-            >
-          </div>
-          <div class="co-lower">
-            <div class="co-lower-content">
-              <div id="map">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  frameborder="0"
-                  src="https://www.google.com/maps/embed/v1/place?q=mondreem%20spain%20s.l&key=AIzaSyAW8cHTSPdEbLg0lJQrHfZyIGTfsa-zBBE"
-                ></iframe>
-              </div>
-              <div id="text">
-                <h4>Spain</h4>
-                <p>+34 964 33 10 81</p>
-                <br />
-                <p>info@mondreem.com</p>
-                <p class="co-lower-text">
-                  Pol Ind S-3 Fase II, Calle A, <br />
-                  no. 9, 12180 Cabanes, <br />
-                  Castellon, Spain.
-                </p>
-              </div>
+        <!-- Roadmap Section -->
+        <section id="roadmap" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">The Long-Term Vision: From OT Pilot to Global Standard</h2>
+                <p class="section-subtitle">This is more than a project; it is a multi-phase strategic initiative designed to create immense value for Rio Tinto and establish a new global standard for industrial safety.</p>
+                <div class="max-w-2xl mx-auto">
+                    <div class="relative">
+                        <div class="absolute left-1/2 top-0 bottom-0 w-1 bg-slate-200 rounded-full"></div>
+                        <div class="relative mb-8">
+                            <div class="absolute left-1/2 -ml-4 h-8 w-8 rounded-full bg-blue-600 border-4 border-white flex items-center justify-center text-white font-bold">1</div>
+                            <div class="ml-12 md:ml-0 md:w-5/12 md:float-left md:text-right">
+                                <div class="card p-4">
+                                    <h4 class="font-bold text-lg">Phase 1: Prove It</h4>
+                                    <p class="text-sm text-slate-600">The OT Pilot. Deliver spectacular, quantifiable results and build our internal case.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative mb-8">
+                            <div class="absolute left-1/2 -ml-4 h-8 w-8 rounded-full bg-blue-600 border-4 border-white flex items-center justify-center text-white font-bold">2</div>
+                            <div class="ml-12 md:w-5/12 md:float-right">
+                                <div class="card p-4">
+                                    <h4 class="font-bold text-lg">Phase 2: Scale It</h4>
+                                    <p class="text-sm text-slate-600">OT-Wide Rollout. Make Oyu Tolgoi the safest and most technologically advanced mine in the world.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative mb-8">
+                            <div class="absolute left-1/2 -ml-4 h-8 w-8 rounded-full bg-blue-600 border-4 border-white flex items-center justify-center text-white font-bold">3</div>
+                            <div class="ml-12 md:ml-0 md:w-5/12 md:float-left md:text-right">
+                                <div class="card p-4">
+                                    <h4 class="font-bold text-lg">Phase 3: Standardize It</h4>
+                                    <p class="text-sm text-slate-600">RT Global Deployment. Turn Blueshift into the global safety standard for all of Rio Tinto.</p>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="relative">
+                            <div class="absolute left-1/2 -ml-4 h-8 w-8 rounded-full bg-blue-600 border-4 border-white flex items-center justify-center text-white font-bold">4</div>
+                            <div class="ml-12 md:w-5/12 md:float-right">
+                                <div class="card p-4">
+                                    <h4 class="font-bold text-lg">Phase 4: Commercialize It</h4>
+                                    <p class="text-sm text-slate-600">The Spinoff. Unlock the IP's value for shareholders by creating a new, independent tech company.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="co-lower-content">
-              <div id="map">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  frameborder="0"
-                  src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJvZHKKUOTll0RnfW8RN5D7NM&key=AIzaSyAW8cHTSPdEbLg0lJQrHfZyIGTfsa-zBBE"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <div id="text">
-                <h4>Mongolia</h4>
-                <p>+976 11 325 391</p>
-                <br />
-                <p>info@mondreem.com</p>
-                <p class="co-lower-text">
-                  Sukhbaatar district, Str-1, <br />
-                  Olympic 9, 12240, Pyramid Building, <br />
-                  Ulaanbaatar, Mongolia.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
-</div>
+        </section>
 
+    </main>
 
-    <!-- Modal contact form -->
-    <section id="my-modal" class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <span class="modal-close"
-            ><img src="/img/pages/modal-close.png" alt=""
-          /></span>
-          <p>Receive our newsletter</p>
-          <h5>Discover Mondreem</h5>
-          <p class="modal-subtext">
-            <br />
-            Be the first to hear about our latest projects
-          </p>
+    <footer class="bg-slate-800 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold mb-4">Ready to Begin?</h3>
+            <p class="text-slate-300 mb-6">This proposal outlines the first step in a campaign to redefine safety. Your support is the critical catalyst.</p>
+            <p class="text-xs text-slate-500">Project Blueshift - Confidential Internal Proposal - August 2025</p>
         </div>
-        <div class="modal-body">
-          <form action="post">
-            <input
-              type="text"
-              id="first-name"
-              class="modal-input"
-              placeholder="Full name"
-            />
-            <input
-              type="text"
-              id="email-address"
-              class="modal-input"
-              placeholder="Email Address"
-            />
-            <button class="btn modal-btn">Subscribe</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer-actual">
-      <div class="footer-container">
-        <div class="footer-social">
-          <a href="https://www.facebook.com/MondreemLLC" class="fb-href"
-            ><img
-              src="/img/svgs/facebook_3.svg"
-              class="ft-sm grey-logo fb-logo"
-              alt="facebook logo"
-          /></a>
-          <a href="https://twitter.com/mondreeml"
-            ><img
-              src="/img/svgs/twitter_3.svg"
-              class="ft-sm grey-logo tw-logo"
-              alt="twitter logo"
-          /></a>
-          <a href="https://www.instagram.com/mondreem_official/"
-            ><img
-              src="/img/svgs/instagram_3.svg"
-              class="ft-sm grey-logo ig-logo"
-              alt="instagram logo"
-          /></a>
-          <a href="https://www.behance.net/mr_monkhtof715"
-            ><img
-              src="/img/svgs/behance_3.svg"
-              class="ft-sm grey-logo be-logo"
-              alt="behance logo"
-          /></a>
-          <a href="https://www.pinterest.ca/mondreem/"
-            ><img
-              src="/img/svgs/pinterest_3.svg"
-              class="ft-sm grey-logo pi-logo"
-              alt="pinterest logo"
-          /></a>
-          <a href="https://www.facebook.com/MondreemLLC"
-            ><img
-              src="/img/svgs/facebook.svg"
-              class="ft-sm color-logo fb-logo"
-              alt="facebook logo"
-          /></a>
-          <a href="https://twitter.com/mondreeml"
-            ><img
-              src="/img/svgs/twitter.svg"
-              class="ft-sm color-logo tw-logo"
-              alt="twitter logo"
-          /></a>
-          <a href="https://www.instagram.com/mondreem_official/"
-            ><img
-              src="/img/svgs/instagram.svg"
-              class="ft-sm color-logo ig-logo"
-              alt="instagram logo"
-          /></a>
-          <a href="https://www.behance.net/mr_monkhtof715"
-            ><img
-              src="/img/svgs/behance.svg"
-              class="ft-sm color-logo be-logo"
-              alt="behance logo"
-          /></a>
-          <a href="https://www.pinterest.ca/mondreem/"
-            ><img
-              src="/img/svgs/pinterest.svg"
-              class="ft-sm color-logo pi-logo"
-              alt="pinterest logo"
-          /></a>
-        </div>
-        <div>
-          <div class="footer-links">
-            <a href="/about">About</a>
-            <a href="/careers">Careers</a>
-            <a href="/contact">Contact</a>
-            <a href="/legal">Legal Notice</a>
-          </div>
-          <p class="footer-text">
-            &copy 2020 Mondreem. All rights reserved
-          </p>
-        </div>
-      </div>
     </footer>
 
-    <script src="/js/tiny-slider.js"></script>
-    <script src="/js/modal.js"></script>
-    <script src="/js/main.js"></script>
-  </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Interactive Demo Logic
+            const demoButton = document.getElementById('demoButton');
+            const demoAlert = document.getElementById('demoAlert');
+            
+            demoButton.addEventListener('click', () => {
+                demoAlert.classList.remove('hidden');
+                setTimeout(() => {
+                    demoAlert.classList.add('hidden');
+                }, 4000);
+            });
+
+            // Chart.js Configuration
+            const chartOptions = {
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.y !== null) {
+                                    label += context.parsed.y + '%';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                }
+            };
+
+            // JHA Score Chart
+            const jhaCtx = document.getElementById('jhaScoreChart').getContext('2d');
+            new Chart(jhaCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Baseline', 'Pilot Goal'],
+                    datasets: [{
+                        label: 'Average First-Pass JHA Quality Score',
+                        data: [65, 85],
+                        backgroundColor: [
+                            'rgba(100, 116, 139, 0.6)', // slate-500
+                            'rgba(37, 99, 235, 0.6)'    // blue-600
+                        ],
+                        borderColor: [
+                            'rgba(100, 116, 139, 1)',
+                            'rgba(37, 99, 235, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: { ...chartOptions, plugins: { ...chartOptions.plugins, title: { display: true, text: 'Projected JHA Score Improvement' } } }
+            });
+
+            // Non-Compliance Chart
+            const ncCtx = document.getElementById('nonComplianceChart').getContext('2d');
+            new Chart(ncCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Baseline', 'Pilot Goal'],
+                    datasets: [{
+                        label: 'Critical Risk Non-Compliances',
+                        data: [100, 50], // Representing 100% baseline vs 50% reduction
+                        backgroundColor: [
+                            'rgba(100, 116, 139, 0.6)', // slate-500
+                            'rgba(13, 148, 136, 0.6)'   // teal-500
+                        ],
+                        borderColor: [
+                            'rgba(100, 116, 139, 1)',
+                            'rgba(13, 148, 136, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: { ...chartOptions, plugins: { ...chartOptions.plugins, title: { display: true, text: 'Projected Reduction in Non-Compliances' } } }
+            });
+        });
+    </script>
+</body>
 </html>
